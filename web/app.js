@@ -313,7 +313,7 @@ function parseDataText(text) {
 function loadDataScript() {
   return new Promise((resolve, reject) => {
     const s = document.createElement("script");
-    s.src = "data.js";
+    s.src = "data.js.gz";
     s.onload = () => {
       DATA = window.APP_DATA;
       initFullData();
@@ -327,7 +327,7 @@ function loadDataScript() {
 function ensureFullData() {
   if (DATA) return Promise.resolve(DATA);
   if (dataLoading) return dataLoading;
-  dataLoading = fetch("data.js")
+  dataLoading = fetch("data.js.gz")
     .then((r) => {
       if (!r.ok) throw new Error("HTTP " + r.status);
       return r.text();

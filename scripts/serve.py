@@ -39,6 +39,18 @@ class GzipHandler(http.server.SimpleHTTPRequestHandler):
             self.send_header("Last-Modified", self.date_time_string(mtime))
             self.end_headers()
             return open(gz_path, "rb")
+        if path.endswith(".gz") and os.path.isfile(path):
+            ctype = self.guess_type(path[:-3])
+            size = os.path.getsize(path)
+            mtime = os.path.getmtime(path)
+            self.send_response(200)
+            self.send_header("Content-Type", ctype)
+            self.send_header("Content-Encoding", "gzip")
+            self.send_header("Vary", "Accept-Encoding")
+            self.send_header("Content-Length", str(size))
+            self.send_header("Last-Modified", self.date_time_string(mtime))
+            self.end_headers()
+            return open(path, "rb")
         return super().send_head()
 
 
