@@ -565,7 +565,9 @@ function renderPoets(caretPos) {
     '<div class="filter-bar">' +
     '<span class="search"><span class="icon">&#9906;</span><input id="f-q" type="search" placeholder="Buscar poeta…" value="' +
     esc(filters.q) +
-    '"></span>' +
+    '"><button type="button" id="f-q-clear" class="clear-search" aria-label="Limpiar búsqueda"' +
+    (filters.q ? "" : " hidden") +
+    ">&#10005;</button></span>" +
     '<select id="f-gender" class="select" aria-label="Filtrar por género">' +
     emptyOpt +
     genders.map((g) => opt(g)).join("") +
@@ -605,6 +607,11 @@ function renderPoets(caretPos) {
     filters.q = q.value;
     saveLS(LS.filters, filters);
     renderPoets(caret);
+  });
+  $("#f-q-clear").addEventListener("click", () => {
+    filters.q = "";
+    saveLS(LS.filters, filters);
+    renderPoets();
   });
 
   if (caretPos != null) {
@@ -717,7 +724,9 @@ function renderPainters(caretPos) {
     '<div class="filter-bar">' +
     '<span class="search"><span class="icon">&#9906;</span><input id="fp-q" type="search" placeholder="Buscar pintor…" value="' +
     esc(pfilters.q) +
-    '"></span>' +
+    '"><button type="button" id="fp-q-clear" class="clear-search" aria-label="Limpiar búsqueda"' +
+    (pfilters.q ? "" : " hidden") +
+    ">&#10005;</button></span>" +
     '<select id="fp-gender" class="select" aria-label="Filtrar por género">' +
     emptyOpt +
     genders.map((g) => opt(g)).join("") +
@@ -757,6 +766,11 @@ function renderPainters(caretPos) {
     pfilters.q = q.value;
     saveLS(LS.pfilters, pfilters);
     renderPainters(caret);
+  });
+  $("#fp-q-clear").addEventListener("click", () => {
+    pfilters.q = "";
+    saveLS(LS.pfilters, pfilters);
+    renderPainters();
   });
 
   if (caretPos != null) {
@@ -1656,7 +1670,11 @@ function renderPoemasPage() {
 function renderBuscarRoute(parts) {
   const q = (parts[1] || "").trim();
   const input = $("#global-search-input");
-  if (input) input.value = q;
+  if (input) {
+    input.value = q;
+    const clear = $("#global-search-clear");
+    if (clear) clear.hidden = !q;
+  }
   renderBuscar(q);
 }
 
@@ -1772,9 +1790,19 @@ function bindCards() {
 function boot() {
   $("#footer-meta").textContent =
     HOME.meta.afinidades + " afinidades · " + pintores.length + " pintores · " + poetas.length + " poetas";
+  const ginput = $("#global-search-input");
+  const gclear = $("#global-search-clear");
+  gclear.addEventListener("click", () => {
+    ginput.value = "";
+    gclear.hidden = true;
+    ginput.focus();
+  });
+  ginput.addEventListener("input", () => {
+    gclear.hidden = !ginput.value;
+  });
   $("#global-search").addEventListener("submit", (e) => {
     e.preventDefault();
-    const q = $("#global-search-input").value.trim();
+    const q = ginput.value.trim();
     location.hash = q ? "#/buscar/" + encodeURIComponent(q) : "#/poetas";
   });
   render();
