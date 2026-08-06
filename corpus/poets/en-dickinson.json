@@ -1,0 +1,149 @@
+{
+  "author": "Emily Dickinson",
+  "author_lifespan": "1830–1886",
+  "language": "en",
+  "description": "The 20 most representative poems of Emily Dickinson",
+  "profile": "https://poets.org/sites/default/files/images/biographies/155_EmilyDickinsonSmall.jpg",
+  "poems": [
+    {
+      "id": 1,
+      "title": "Hope is the thing with feathers",
+      "book": "First published posthumously (c. 1861)",
+      "year": "1861",
+      "text": "\"Hope\" is the thing with feathers —\nThat perches in the soul —\nAnd sings the tune without the words —\nAnd never stops — at all —\n\nAnd sweetest — in the Gale — is heard —\nAnd sore must be the storm —\nThat could abash the little Bird\nThat kept so many warm —\n\nI've heard it in the chillest land —\nAnd on the strangest Sea —\nYet — never — in Extremity,\nIt asked a crumb — of me."
+    },
+    {
+      "id": 2,
+      "title": "I felt a Funeral, in my Brain",
+      "book": "First published posthumously (c. 1861)",
+      "year": "1861",
+      "text": "I felt a Funeral, in my Brain,\nAnd Mourners to and fro\nKept treading — treading — till it seemed\nThat Sense was breaking through —\n\nAnd when they all were seated,\nA Service, like a Drum —\nKept beating — beating — till I thought\nMy Mind was going numb —\n\nAnd then — a Plank in Reason, broke,\nAnd I dropped down, and down —\nAnd hit a World, at every plunge,\nAnd Finished knowing — then —"
+    },
+    {
+      "id": 3,
+      "title": "Because I could not stop for Death",
+      "book": "First published posthumously (c. 1863)",
+      "year": "1863",
+      "text": "Because I could not stop for Death —\nHe kindly stopped for me —\nThe Carriage held but just Ourselves —\nAnd Immortality.\n\nWe slowly drove — He knew no haste\nAnd I had put away\nMy labor and my leisure too,\nFor His Civility —\n\nWe passed the School, where Children strove\nAt Recess — in the Ring —\nWe passed the Fields of Gazing Grain —\nWe passed the Setting Sun —\n\nOr rather — He passed Us —\nThe Dews drew quivering and Chill —\nFor only Gossamer, my Gown —\nMy Tippet — only Tulle —\n\nWe paused before a House that seemed\nA Swelling of the Ground —\nThe Roof was scarcely visible —\nThe Cornice — in the Ground —\n\nSince then — 'tis Centuries — and yet\nFeels shorter than the Day\nI first surmised the Horses' Heads\nWere toward Eternity —"
+    },
+    {
+      "id": 4,
+      "title": "I'm Nobody! Who are you?",
+      "book": "First published posthumously (c. 1861)",
+      "year": "1861",
+      "text": "I'm Nobody! Who are you?\nAre you — Nobody — too?\nThen there's a pair of us!\nDon't tell! they'd advertise — you know!\n\nHow dreary — to be — Somebody!\nHow public — like a Frog —\nTo tell one's name — the livelong June —\nTo an admiring Bog!"
+    },
+    {
+      "id": 5,
+      "title": "My Life had stood — a Loaded Gun",
+      "book": "First published posthumously (c. 1863)",
+      "year": "1863",
+      "text": "My Life had stood — a Loaded Gun —\nIn Corners — till a Day\nThe Owner passed — identified —\nAnd carried Me away —\n\nAnd now We roam in Sovreign Woods —\nAnd now We hunt the Doe —\nAnd every time I speak for Him\nThe Mountains straight reply —\n\nAnd do I smile, such cordial light\nUpon the Valley glow —\nIt is as a Vesuvian face\nHad let its pleasure through —\n\nAnd when at Night — Our good Day done —\nAnd I in His Chamber — place —\nPile the Balls of Aural Light —\nThen — brooding in the Base —\n\nAnd I — and He — superior —\nCircumference without a Crack —"
+    },
+    {
+      "id": 6,
+      "title": "I heard a Fly buzz — when I died",
+      "book": "First published posthumously (c. 1862)",
+      "year": "1862",
+      "text": "I heard a Fly buzz — when I died —\nThe Stillness in the Room\nWas like the Stillness in the Air —\nBetween the Heaves of Storm —\n\nThe Eyes around — had wrung them dry —\nAnd Breaths were gathering firm\nFor that last Onset — when the King\nBe witnessed — in the Room —\n\nI willed my Keepsakes — Signed away\nWhat portion of me be\nAssignable — and then it was\nThere interposed a Fly —\n\nWith Blue — uncertain stumbling Buzz —\nBetween the light — and me —\nAnd then the Windows failed — and then\nI could not see to see —"
+    },
+    {
+      "id": 7,
+      "title": "Tell all the truth, but tell it slant",
+      "book": "First published posthumously (c. 1868)",
+      "year": "1868",
+      "text": "Tell all the truth but tell it slant —\nSuccess in Circuit lies\nToo bright for our infirm Delight\nThe Truth's superb surprise\n\nAs Lightning to the Children eased\nWith explanation kind\nThe Truth must dazzle gradually\nOr every man be blind —"
+    },
+    {
+      "id": 8,
+      "title": "Wild Nights — Wild Nights!",
+      "book": "First published posthumously (c. 1861)",
+      "year": "1861",
+      "text": "Wild Nights — Wild Nights!\nWere I with thee\nWild Nights should be\nOur luxury!\n\nFutile — the winds —\nTo a Heart in port —\nDone with the Compass —\nDone with the Chart!\n\nRowing in Eden —\nAh — the Sea —\nMight I but moor — to Night —\nIn Thee!"
+    },
+    {
+      "id": 9,
+      "title": "I dwell in Possibility",
+      "book": "First published posthumously (c. 1862)",
+      "year": "1862",
+      "text": "I dwell in Possibility —\nA fairer House than Prose —\nMore numerous of Windows —\nSuperior — for Doors —\n\nOf Chambers as the Cedars —\nImpregnable of eye —\nAnd for an everlasting Roof\nThe Gambrels of the Sky —\n\nOf Visitors — the fairest —\nFor Occupation — This —\nThe spreading wide my narrow Hands\nTo gather Paradise —"
+    },
+    {
+      "id": 10,
+      "title": "Success is counted sweetest",
+      "book": "First published in 1864",
+      "year": "1859",
+      "text": "Success is counted sweetest\nBy those who ne'er succeed.\nTo comprehend a nectar\nRequires sorest need.\n\nNot one of all the purple Host\nWho took the Flag to day\nCan tell the definition\nSo clear of victory\n\nAs he defeated — dying —\nOn whose forbidden ear\nThe distant strains of triumph\nBurst agonized and clear!"
+    },
+    {
+      "id": 11,
+      "title": "If I can stop one Heart from breaking",
+      "book": "First published posthumously (c. 1862)",
+      "year": "1862",
+      "text": "If I can stop one heart from breaking,\nI shall not live in vain;\nIf I can ease one life the aching,\nOr cool one pain,\n\nOr help one fainting robin\nUnto his nest again,\nI shall not live in vain."
+    },
+    {
+      "id": 12,
+      "title": "A Bird came down the Walk",
+      "book": "First published posthumously (c. 1862)",
+      "year": "1862",
+      "text": "A Bird came down the Walk —\nHe did not know I saw —\nHe bit an Angle Worm in halves\nAnd ate the fellow, raw,\n\nAnd then, he drank a Dew\nFrom a convenient Grass —\nAnd then hopped sidewise to the Wall\nTo let a Beetle pass —\n\nHe glanced with rapid eyes,\nThat hurried all around —\nThey looked like frightened Beads, I thought —\nHe stirred his Velvet Head\n\nLike one in danger, Cautious,\nI offered him a Crumb\nAnd he unrolled his feathers\nAnd rowed him softer home —\n\nThan Oars divide the Ocean,\nToo silver for a seam —\nOr Butterflies, off Banks of Noon\nLeap, plashless as they swim."
+    },
+    {
+      "id": 13,
+      "title": "To fight aloud is very brave",
+      "book": "First published posthumously (c. 1862)",
+      "year": "1862",
+      "text": "To fight aloud, is very brave —\nBut gallanter, I know\nWho charge within the bosom,\nThe Cavalry of Woe —\n\nWho win, and nations do not see —\nWho fall — and none observe —\nWhose dying eyes, no Country\nRegards with patriot love —\n\nWe trust, in plumed procession\nFor such, the Angels go —\nRank after Rank, with even feet\nAnd Uniforms of Snow."
+    },
+    {
+      "id": 14,
+      "title": "My life closed twice before its close",
+      "book": "First published posthumously (c. 1862)",
+      "year": "1862",
+      "text": "My life closed twice before its close —\nIt yet remains to see\nIf Immortality unveil\nA third event to me\n\nSo huge, so hopeless to conceive\nAs these that twice befell.\nParting is all we know of heaven,\nAnd all we need of hell."
+    },
+    {
+      "id": 15,
+      "title": "Dear March — Come in —",
+      "book": "First published posthumously (c. 1871)",
+      "year": "1871",
+      "text": "Dear March — Come in —\nHow glad I am —\nI hoped for you before —\nPut down your Hat —\nYou must have walked —\nHow out of Breath you are —\n\nDear March, how are you, and the Rest —\nDid you leave Nature well —\nOh March, Come right upstairs with me —\nI have so much to tell —\n\nI got your Letter, and the Birds —\nThe Maples never knew That you were coming — I declare,\nHow red their Faces grew —\n\nBut, March, forgive me —\nAnd all those Hills you left for me to see —\nI have not got a Peach from any\nSince yours was true —\n\nDear March, come right upstairs with me —\nI have so much to tell —\nI got your Letter, and the Birds —\nThe Maples never knew —\n\nYou were just as fair as people\nI had seen before —\nAnd I went on, to tell you all —\nAbout the Door —\n\nI must declare, how red their Faces grew —\nBut, March, forgive me —\nAnd all those Hills you left for me to see —\nI have not got a Peach from any\nSince you went away —"
+    },
+    {
+      "id": 16,
+      "title": "I taste a liquor never brewed",
+      "book": "First published posthumously (c. 1861)",
+      "year": "1861",
+      "text": "I taste a liquor never brewed —\nFrom Tankards scooped in Pearl —\nNot all the Frankfort Berries\nYield such an Alcohol!\n\nInebriate of air — am I —\nAnd Debauchee of Dew —\nReeling — thro' endless summer days —\nFrom inns of molten Blue —\n\nWhen \"Landlords\" turn the drunken Bee\nOut of the Foxglove's door —\nWhen Butterflies — renounce their \"drams\" —\nI shall but drink the more!\n\nTill Seraphs swing their snowy Hats —\nAnd Saints — to windows run —\nTo see the little Tippler\nLeaning against the — Sun!"
+    },
+    {
+      "id": 17,
+      "title": "There's a certain Slant of light",
+      "book": "First published posthumously (c. 1861)",
+      "year": "1861",
+      "text": "There's a certain Slant of light,\nWinter Afternoons —\nThat oppresses, like the Heft\nOf Cathedral Tunes —\n\nHeavenly Hurt, it gives us —\nWe can find no scar,\nBut internal difference\nWhere the Meanings, are —\n\nNone may teach it — Any —\n'Tis the seal Despair —\nAn imperial affliction\nSent us of the Air —\n\nWhen it comes, the Landscape listens —\nShadows — hold their breath —\nWhen it goes, 'tis like the Distance\nOn the look of Death —"
+    },
+    {
+      "id": 18,
+      "title": "I died for Beauty — but was scarce",
+      "book": "First published posthumously (c. 1862)",
+      "year": "1862",
+      "text": "I died for Beauty — but was scarce\nAdjusted in the Tomb\nWhen One who died for Truth, was lain\nIn an adjoining Room —\n\nHe questioned softly \"Why I failed\"?\n\"For Beauty\", I replied —\n\"And I — for Truth — Themself are One —\nWe Brethren, are\", He said —\n\nAnd so, as Kinsmen, met a Night —\nWe talked between the Rooms —\nUntil the Moss had reached our lips —\nAnd covered up — Our Names —"
+    },
+    {
+      "id": 19,
+      "title": "After great pain, a formal feeling comes",
+      "book": "First published posthumously (c. 1862)",
+      "year": "1862",
+      "text": "After great pain, a formal feeling comes —\nThe Nerves sit ceremonious, like Tombs —\nThe stiff Heart questions — was it He, that bore,\nAnd Yesterday — or Centuries before?\n\nThe Feet, mechanical, go round —\nOf Wooden way — of Ground —\nOr Air, or Ought — regardless grown,\nA Quartz contentment, like a stone —\n\nThis is the Hour of Lead —\nRemembered, if outlived,\nAs Freezing persons, recollect the Snow —\nFirst — Chill — then Stupor — then the letting go —"
+    },
+    {
+      "id": 20,
+      "title": "This is my letter to the World",
+      "book": "First published posthumously (c. 1862)",
+      "year": "1862",
+      "text": "This is my letter to the World\nThat never wrote to Me —\nThe simple News that Nature told —\nWith tender Majesty\n\nHer Message is committed\nTo Hands I cannot see —\nFor love of Her — Sweet — countrymen —\nJudge tenderly — of Me"
+    }
+  ]
+}

@@ -1,0 +1,2596 @@
+﻿[
+    {
+        "id":  1,
+        "total_works":  10,
+        "directory":  "rembrandt",
+        "gender":  "Hombre",
+        "name":  "Rembrandt",
+        "region":  "Países Bajos",
+        "works":  [
+                      {
+                          "file":  "01_Portrait_of_Gerard_de_Lairesse.jpg",
+                          "size_kb":  35
+                      },
+                      {
+                          "file":  "02_Herman_Doomer.jpg",
+                          "size_kb":  37.3
+                      },
+                      {
+                          "file":  "03_Self-Portrait.jpg",
+                          "size_kb":  23.7
+                      },
+                      {
+                          "file":  "04_Aristotle_with_a_Bust_of_Homer.jpg",
+                          "size_kb":  29.2
+                      },
+                      {
+                          "file":  "05_Flora.jpg",
+                          "size_kb":  44.8
+                      },
+                      {
+                          "file":  "06_Man_in_a_Turban.jpg",
+                          "size_kb":  28.3
+                      },
+                      {
+                          "file":  "07_Bellona.jpg",
+                          "size_kb":  29.5
+                      },
+                      {
+                          "file":  "08_Portrait_of_a_Woman.jpg",
+                          "size_kb":  24.2
+                      },
+                      {
+                          "file":  "09_Hendrickje_Stoffels.jpg",
+                          "size_kb":  36.1
+                      },
+                      {
+                          "file":  "10_The_Toilet_of_Bathsheba.jpg",
+                          "size_kb":  56.8
+                      }
+                  ],
+        "period":  "Barroco, siglo XVII"
+    },
+    {
+        "id":  2,
+        "total_works":  10,
+        "directory":  "renoir",
+        "gender":  "Hombre",
+        "name":  "Pierre-Auguste Renoir",
+        "region":  "Francia",
+        "works":  [
+                      {
+                          "file":  "01_Young_Girl_Bathing.jpg",
+                          "size_kb":  37
+                      },
+                      {
+                          "file":  "02_Tilla_Durieux.jpg",
+                          "size_kb":  54.7
+                      },
+                      {
+                          "file":  "03_Eugene_Murer.jpg",
+                          "size_kb":  48.7
+                      },
+                      {
+                          "file":  "04_Madame_Georges_Charpentier.jpg",
+                          "size_kb":  90.4
+                      },
+                      {
+                          "file":  "05_Daughters_of_Catulle_Mendes.jpg",
+                          "size_kb":  69.1
+                      },
+                      {
+                          "file":  "06_A_Road_in_Louveciennes.jpg",
+                          "size_kb":  101.6
+                      },
+                      {
+                          "file":  "07_Still_Life_with_Flowers.jpg",
+                          "size_kb":  64.4
+                      },
+                      {
+                          "file":  "08_In_the_Meadow.jpg",
+                          "size_kb":  81
+                      },
+                      {
+                          "file":  "09_Nini_in_the_Garden.jpg",
+                          "size_kb":  89.7
+                      },
+                      {
+                          "file":  "10_Still_Life_with_Peaches.jpg",
+                          "size_kb":  76.2
+                      }
+                  ],
+        "period":  "Impresionismo, siglo XIX"
+    },
+    {
+        "id":  3,
+        "total_works":  10,
+        "directory":  "da-vinci",
+        "gender":  "Hombre",
+        "name":  "Leonardo da Vinci",
+        "region":  "Italia",
+        "works":  [
+                      {
+                          "file":  "01_mona_lisa.jpg",
+                          "size_kb":  30.6
+                      },
+                      {
+                          "file":  "02_last_supper.jpg",
+                          "size_kb":  49.7
+                      },
+                      {
+                          "file":  "03_lady_with_ermine.jpg",
+                          "size_kb":  23.7
+                      },
+                      {
+                          "file":  "04_vitruvian_man.jpg",
+                          "size_kb":  63.7
+                      },
+                      {
+                          "file":  "05_annunciation.jpg",
+                          "size_kb":  43.1
+                      },
+                      {
+                          "file":  "06_salvator_mundi.jpg",
+                          "size_kb":  29
+                      },
+                      {
+                          "file":  "07_virgin_of_rocks.jpg",
+                          "size_kb":  35.3
+                      },
+                      {
+                          "file":  "08_saint_john_baptist.jpg",
+                          "size_kb":  37.9
+                      },
+                      {
+                          "file":  "09_ginevra_benci.jpg",
+                          "size_kb":  49.7
+                      },
+                      {
+                          "file":  "10_head_of_woman.jpg",
+                          "size_kb":  51.7
+                      }
+                  ],
+        "period":  "Renacimiento, siglos XV-XVI"
+    },
+    {
+        "id":  4,
+        "total_works":  10,
+        "directory":  "sorolla",
+        "gender":  "Hombre",
+        "name":  "Joaquín Sorolla",
+        "region":  "España",
+        "works":  [
+                      {
+                          "file":  "01_walk_beach.jpg",
+                          "size_kb":  54
+                      },
+                      {
+                          "file":  "02_sad_inheritance.jpg",
+                          "size_kb":  61
+                      },
+                      {
+                          "file":  "03_children_beach.jpg",
+                          "size_kb":  53.9
+                      },
+                      {
+                          "file":  "04_white_slave_trade.jpg",
+                          "size_kb":  72.1
+                      },
+                      {
+                          "file":  "05_strolling_seashore.jpg",
+                          "size_kb":  57.4
+                      },
+                      {
+                          "file":  "06_fishermen_wives.jpg",
+                          "size_kb":  103.6
+                      },
+                      {
+                          "file":  "07_wife_daughters_garden.jpg",
+                          "size_kb":  101.7
+                      },
+                      {
+                          "file":  "08_the_lunch.jpg",
+                          "size_kb":  62.6
+                      },
+                      {
+                          "file":  "09_sewing_sail.jpg",
+                          "size_kb":  87
+                      },
+                      {
+                          "file":  "10_capuchin_church.jpg",
+                          "size_kb":  61
+                      }
+                  ],
+        "period":  "Luminismo, siglos XIX-XX"
+    },
+    {
+        "id":  5,
+        "total_works":  10,
+        "directory":  "picasso",
+        "gender":  "Hombre",
+        "name":  "Pablo Picasso",
+        "region":  "España / Francia",
+        "works":  [
+                      {
+                          "file":  "01_les_demoiselles.jpg",
+                          "size_kb":  51.9
+                      },
+                      {
+                          "file":  "02_old_guitarist.jpg",
+                          "size_kb":  29.1
+                      },
+                      {
+                          "file":  "03_guernica.jpg",
+                          "size_kb":  54.6
+                      },
+                      {
+                          "file":  "04_three_musicians.jpg",
+                          "size_kb":  78.9
+                      },
+                      {
+                          "file":  "05_weeping_woman.jpg",
+                          "size_kb":  93.3
+                      },
+                      {
+                          "file":  "06_the_dream.jpg",
+                          "size_kb":  53.3
+                      },
+                      {
+                          "file":  "07_la_vie.jpg",
+                          "size_kb":  43.6
+                      },
+                      {
+                          "file":  "08_girl_before_mirror.jpg",
+                          "size_kb":  90.1
+                      },
+                      {
+                          "file":  "09_boy_with_pipe.jpg",
+                          "size_kb":  43.7
+                      },
+                      {
+                          "file":  "10_two_nudes.jpg",
+                          "size_kb":  54.4
+                      }
+                  ],
+        "period":  "Vanguardias, siglo XX"
+    },
+    {
+        "id":  6,
+        "total_works":  10,
+        "directory":  "klimt",
+        "gender":  "Hombre",
+        "name":  "Gustav Klimt",
+        "region":  "Austria",
+        "works":  [
+                      {
+                          "file":  "01_the_kiss.jpg",
+                          "size_kb":  79.3
+                      },
+                      {
+                          "file":  "02_adele_bloch_bauer.jpg",
+                          "size_kb":  106.8
+                      },
+                      {
+                          "file":  "03_tree_of_life.jpg",
+                          "size_kb":  66.3
+                      },
+                      {
+                          "file":  "04_judith.jpg",
+                          "size_kb":  38.1
+                      },
+                      {
+                          "file":  "05_danae.jpg",
+                          "size_kb":  60.4
+                      },
+                      {
+                          "file":  "06_the_virgin.jpg",
+                          "size_kb":  103.3
+                      },
+                      {
+                          "file":  "07_death_and_life.jpg",
+                          "size_kb":  74
+                      },
+                      {
+                          "file":  "08_water_serpents_ii.jpg",
+                          "size_kb":  56.8
+                      },
+                      {
+                          "file":  "09_adele_bloch_bauer_ii.jpg",
+                          "size_kb":  56.7
+                      },
+                      {
+                          "file":  "10_beethoven_frieze.jpg",
+                          "size_kb":  46.1
+                      }
+                  ],
+        "period":  "Simbolismo y modernismo, siglos XIX-XX"
+    },
+    {
+        "id":  7,
+        "total_works":  10,
+        "directory":  "okeeffe",
+        "gender":  "Mujer",
+        "name":  "Georgia O’Keeffe",
+        "region":  "Estados Unidos",
+        "works":  [
+                      {
+                          "file":  "01_jimson_weed.jpg",
+                          "size_kb":  57.3
+                      },
+                      {
+                          "file":  "02_black_iris.jpg",
+                          "size_kb":  40.6
+                      },
+                      {
+                          "file":  "03_red_canna.jpg",
+                          "size_kb":  29.4
+                      },
+                      {
+                          "file":  "04_rams_head_white_hollyhock.jpg",
+                          "size_kb":  77.2
+                      },
+                      {
+                          "file":  "05_from_the_lake.jpg",
+                          "size_kb":  37
+                      },
+                      {
+                          "file":  "06_sky_above_clouds.jpg",
+                          "size_kb":  26.4
+                      },
+                      {
+                          "file":  "07_pelvis_with_the_distance.jpg",
+                          "size_kb":  48.7
+                      },
+                      {
+                          "file":  "08_jack_in_the_pulpit_no_iv.jpg",
+                          "size_kb":  24.3
+                      },
+                      {
+                          "file":  "09_cow_skull_red_white_blue.jpg",
+                          "size_kb":  37.5
+                      },
+                      {
+                          "file":  "10_pink_dish_with_green_leaves.jpg",
+                          "size_kb":  51.6
+                      }
+                  ],
+        "period":  "Modernismo, siglo XX"
+    },
+    {
+        "id":  8,
+        "total_works":  10,
+        "directory":  "kahlo",
+        "gender":  "Mujer",
+        "name":  "Frida Kahlo",
+        "region":  "México",
+        "works":  [
+                      {
+                          "file":  "01_two_fridas.jpg",
+                          "size_kb":  62
+                      },
+                      {
+                          "file":  "02_thorn_necklace.jpg",
+                          "size_kb":  59.2
+                      },
+                      {
+                          "file":  "03_broken_column.jpg",
+                          "size_kb":  47.6
+                      },
+                      {
+                          "file":  "04_cropped_hair.jpg",
+                          "size_kb":  43
+                      },
+                      {
+                          "file":  "05_henry_ford_hospital.jpg",
+                          "size_kb":  63
+                      },
+                      {
+                          "file":  "06_wounded_deer.jpg",
+                          "size_kb":  108.2
+                      },
+                      {
+                          "file":  "07_diego_and_i.jpg",
+                          "size_kb":  48.3
+                      },
+                      {
+                          "file":  "08_borderline.jpg",
+                          "size_kb":  73.5
+                      },
+                      {
+                          "file":  "09_roots.jpg",
+                          "size_kb":  75.2
+                      },
+                      {
+                          "file":  "10_love_embrace.jpg",
+                          "size_kb":  61.6
+                      }
+                  ],
+        "period":  "Modernismo, siglo XX"
+    },
+    {
+        "id":  9,
+        "total_works":  10,
+        "directory":  "dali",
+        "gender":  "Hombre",
+        "name":  "Salvador Dalí",
+        "region":  "España",
+        "works":  [
+                      {
+                          "file":  "01_persistence_memory.jpg",
+                          "size_kb":  36.8
+                      },
+                      {
+                          "file":  "02_elephants.jpg",
+                          "size_kb":  50.8
+                      },
+                      {
+                          "file":  "03_swans_reflecting_elephants.jpg",
+                          "size_kb":  72.3
+                      },
+                      {
+                          "file":  "04_great_masturbator.jpg",
+                          "size_kb":  61.8
+                      },
+                      {
+                          "file":  "05_soft_construction_boiled_beans.jpg",
+                          "size_kb":  62
+                      },
+                      {
+                          "file":  "06_burning_giraffe.jpg",
+                          "size_kb":  144
+                      },
+                      {
+                          "file":  "07_sleep.jpg",
+                          "size_kb":  59
+                      },
+                      {
+                          "file":  "08_disintegration_persistence_memory.jpg",
+                          "size_kb":  106.6
+                      },
+                      {
+                          "file":  "09_christ_saint_john.jpg",
+                          "size_kb":  19.3
+                      },
+                      {
+                          "file":  "10_lobster_telephone.jpg",
+                          "size_kb":  39.2
+                      }
+                  ],
+        "period":  "Surrealismo, siglo XX"
+    },
+    {
+        "id":  10,
+        "total_works":  10,
+        "directory":  "van-gogh",
+        "gender":  "Hombre",
+        "name":  "Vincent van Gogh",
+        "region":  "Países Bajos / Francia",
+        "works":  [
+                      {
+                          "file":  "01_starry_night.jpg",
+                          "size_kb":  110.4
+                      },
+                      {
+                          "file":  "02_sunflowers.jpg",
+                          "size_kb":  68.9
+                      },
+                      {
+                          "file":  "03_bedroom_in_arles.jpg",
+                          "size_kb":  117.3
+                      },
+                      {
+                          "file":  "04_the_night_cafe.jpg",
+                          "size_kb":  147.8
+                      },
+                      {
+                          "file":  "05_irises.jpg",
+                          "size_kb":  136.4
+                      },
+                      {
+                          "file":  "06_wheatfield_with_crows.jpg",
+                          "size_kb":  81
+                      },
+                      {
+                          "file":  "07_self_portrait.jpg",
+                          "size_kb":  65.2
+                      },
+                      {
+                          "file":  "08_almond_blossom.jpg",
+                          "size_kb":  119.5
+                      },
+                      {
+                          "file":  "09_potato_eaters.jpg",
+                          "size_kb":  63.4
+                      },
+                      {
+                          "file":  "10_cafe_terrace_at_night.jpg",
+                          "size_kb":  83.3
+                      }
+                  ],
+        "period":  "Postimpresionismo, siglo XIX"
+    },
+    {
+        "id":  11,
+        "total_works":  10,
+        "directory":  "monet",
+        "gender":  "Hombre",
+        "name":  "Claude Monet",
+        "region":  "Francia",
+        "works":  [
+                      {
+                          "file":  "01_impression_sunrise.jpg",
+                          "size_kb":  48.5
+                      },
+                      {
+                          "file":  "02_water_lilies.jpg",
+                          "size_kb":  83.7
+                      },
+                      {
+                          "file":  "03_woman_with_a_parasol.jpg",
+                          "size_kb":  60
+                      },
+                      {
+                          "file":  "04_rouen_cathedral.jpg",
+                          "size_kb":  44.8
+                      },
+                      {
+                          "file":  "05_poppy_field.jpg",
+                          "size_kb":  77
+                      },
+                      {
+                          "file":  "06_japanese_bridge.jpg",
+                          "size_kb":  83.8
+                      },
+                      {
+                          "file":  "07_saint_lazare_station.jpg",
+                          "size_kb":  91.1
+                      },
+                      {
+                          "file":  "08_haystacks.jpg",
+                          "size_kb":  107.9
+                      },
+                      {
+                          "file":  "09_san_giorgio_maggiore.jpg",
+                          "size_kb":  96.6
+                      },
+                      {
+                          "file":  "10_dejeuner_sur_lherbe.jpg",
+                          "size_kb":  66.6
+                      }
+                  ],
+        "period":  "Impresionismo, siglos XIX-XX"
+    },
+    {
+        "id":  12,
+        "total_works":  10,
+        "directory":  "goya",
+        "gender":  "Hombre",
+        "name":  "Francisco de Goya",
+        "region":  "España",
+        "works":  [
+                      {
+                          "file":  "01_familia_carlos_iv.jpg",
+                          "size_kb":  62.2
+                      },
+                      {
+                          "file":  "02_maja_vestida.jpg",
+                          "size_kb":  33.5
+                      },
+                      {
+                          "file":  "03_maja_desnuda.jpg",
+                          "size_kb":  32.3
+                      },
+                      {
+                          "file":  "04_tres_de_mayo.jpg",
+                          "size_kb":  53
+                      },
+                      {
+                          "file":  "05_saturno_devorando.jpg",
+                          "size_kb":  23
+                      },
+                      {
+                          "file":  "06_aquelarre.jpg",
+                          "size_kb":  47.5
+                      },
+                      {
+                          "file":  "07_el_quitasol.jpg",
+                          "size_kb":  64.8
+                      },
+                      {
+                          "file":  "08_gallina_ciega.jpg",
+                          "size_kb":  68
+                      },
+                      {
+                          "file":  "09_duelo_garrotazos.jpg",
+                          "size_kb":  53.4
+                      },
+                      {
+                          "file":  "10_sueno_razon.jpg",
+                          "size_kb":  65.7
+                      }
+                  ],
+        "period":  "Romanticismo, siglos XVIII-XIX"
+    },
+    {
+        "id":  13,
+        "total_works":  10,
+        "directory":  "giotto",
+        "gender":  "Hombre",
+        "name":  "Giotto di Bondone",
+        "region":  "Italia",
+        "works":  [
+                      {
+                          "file":  "01_lamentation.jpg",
+                          "size_kb":  99.8
+                      },
+                      {
+                          "file":  "02_kiss_of_judas.jpg",
+                          "size_kb":  98.1
+                      },
+                      {
+                          "file":  "03_st_francis_stigmata.jpg",
+                          "size_kb":  35.5
+                      },
+                      {
+                          "file":  "04_flight_into_egypt.jpg",
+                          "size_kb":  72.7
+                      },
+                      {
+                          "file":  "05_nativity.jpg",
+                          "size_kb":  75.1
+                      },
+                      {
+                          "file":  "06_entry_into_jerusalem.jpg",
+                          "size_kb":  93
+                      },
+                      {
+                          "file":  "07_meeting_golden_gate.jpg",
+                          "size_kb":  89.7
+                      },
+                      {
+                          "file":  "08_last_judgment.jpg",
+                          "size_kb":  76.2
+                      },
+                      {
+                          "file":  "09_adoration_magi.jpg",
+                          "size_kb":  72.9
+                      },
+                      {
+                          "file":  "10_ognissanti_madonna.jpg",
+                          "size_kb":  50.2
+                      }
+                  ],
+        "period":  "Proto-Renacimiento, siglos XIII-XIV"
+    },
+    {
+        "id":  14,
+        "total_works":  10,
+        "directory":  "hilma-af-klint",
+        "gender":  "Mujer",
+        "name":  "Hilma af Klint",
+        "region":  "Suecia",
+        "works":  [
+                      {
+                          "file":  "01_chaos_nr_2.jpg",
+                          "size_kb":  46.9
+                      },
+                      {
+                          "file":  "02_ten_largest_n2_childhood.jpg",
+                          "size_kb":  36.9
+                      },
+                      {
+                          "file":  "03_ten_largest_n10_old_age.jpg",
+                          "size_kb":  46
+                      },
+                      {
+                          "file":  "04_the_swan_no_17.jpg",
+                          "size_kb":  21.7
+                      },
+                      {
+                          "file":  "05_tree_of_knowledge.jpg",
+                          "size_kb":  40
+                      },
+                      {
+                          "file":  "06_altarpiece_no_2.jpg",
+                          "size_kb":  39.7
+                      },
+                      {
+                          "file":  "07_swan_no_1.jpg",
+                          "size_kb":  56
+                      },
+                      {
+                          "file":  "08_what_a_human_being_is.jpg",
+                          "size_kb":  44.6
+                      },
+                      {
+                          "file":  "09_atom_series_no_8.jpg",
+                          "size_kb":  77.4
+                      },
+                      {
+                          "file":  "10_wheat_and_wormwood.jpg",
+                          "size_kb":  45.9
+                      }
+                  ],
+        "period":  "Abstracción pionera, siglos XIX-XX"
+    },
+    {
+        "id":  15,
+        "total_works":  10,
+        "directory":  "botticelli",
+        "gender":  "Hombre",
+        "name":  "Sandro Botticelli",
+        "region":  "Italia",
+        "works":  [
+                      {
+                          "file":  "01_birth_of_venus.jpg",
+                          "size_kb":  77.7
+                      },
+                      {
+                          "file":  "02_primavera.jpg",
+                          "size_kb":  96.9
+                      },
+                      {
+                          "file":  "03_venus_and_mars.jpg",
+                          "size_kb":  59.8
+                      },
+                      {
+                          "file":  "04_adoration_magi.jpg",
+                          "size_kb":  86.9
+                      },
+                      {
+                          "file":  "05_madonna_magnificat.jpg",
+                          "size_kb":  84
+                      },
+                      {
+                          "file":  "06_mystical_nativity.jpg",
+                          "size_kb":  66
+                      },
+                      {
+                          "file":  "07_annunciation.jpg",
+                          "size_kb":  75.2
+                      },
+                      {
+                          "file":  "08_calumny_apelles.jpg",
+                          "size_kb":  90.1
+                      },
+                      {
+                          "file":  "09_portrait_young_man.jpg",
+                          "size_kb":  27.7
+                      },
+                      {
+                          "file":  "10_fortitude.jpg",
+                          "size_kb":  43.7
+                      }
+                  ],
+        "period":  "Renacimiento, siglo XV"
+    },
+    {
+        "id":  16,
+        "total_works":  10,
+        "directory":  "sofonisba-anguissola",
+        "gender":  "Mujer",
+        "name":  "Sofonisba Anguissola",
+        "region":  "Italia",
+        "works":  [
+                      {
+                          "file":  "01_self_portrait_1554.jpg",
+                          "size_kb":  147.1
+                      },
+                      {
+                          "file":  "02_sisters_playing_chess.jpg",
+                          "size_kb":  275
+                      },
+                      {
+                          "file":  "03_self_portrait_easel.jpg",
+                          "size_kb":  158.1
+                      },
+                      {
+                          "file":  "04_family_portrait.jpg",
+                          "size_kb":  70.5
+                      },
+                      {
+                          "file":  "05_portrait_bianca.jpg",
+                          "size_kb":  160.1
+                      },
+                      {
+                          "file":  "06_portrait_massimiliano.jpg",
+                          "size_kb":  1961.7
+                      },
+                      {
+                          "file":  "07_portrait_minerva.jpg",
+                          "size_kb":  86.1
+                      },
+                      {
+                          "file":  "08_campi_painting_anguissola.jpg",
+                          "size_kb":  119.5
+                      },
+                      {
+                          "file":  "09_portrait_juana_austria.jpg",
+                          "size_kb":  58.7
+                      },
+                      {
+                          "file":  "10_three_children_dog.jpg",
+                          "size_kb":  277
+                      }
+                  ],
+        "period":  "Renacimiento, siglo XVI"
+    },
+    {
+        "id":  17,
+        "total_works":  10,
+        "directory":  "michelangelo",
+        "gender":  "Hombre",
+        "name":  "Miguel Ángel",
+        "region":  "Italia",
+        "works":  [
+                      {
+                          "file":  "01_creation_of_adam.jpg",
+                          "size_kb":  43.5
+                      },
+                      {
+                          "file":  "02_last_judgment.jpg",
+                          "size_kb":  70.2
+                      },
+                      {
+                          "file":  "03_doni_tondo.jpg",
+                          "size_kb":  70.4
+                      },
+                      {
+                          "file":  "04_sistine_ceiling.jpg",
+                          "size_kb":  39.3
+                      },
+                      {
+                          "file":  "05_libyan_sibyl.jpg",
+                          "size_kb":  69.1
+                      },
+                      {
+                          "file":  "06_delphic_sibyl.jpg",
+                          "size_kb":  51.6
+                      },
+                      {
+                          "file":  "07_creation_of_eve.jpg",
+                          "size_kb":  85.4
+                      },
+                      {
+                          "file":  "08_the_flood.jpg",
+                          "size_kb":  42.6
+                      },
+                      {
+                          "file":  "09_separation_of_light.jpg",
+                          "size_kb":  93.9
+                      },
+                      {
+                          "file":  "10_entombment.jpg",
+                          "size_kb":  62.4
+                      }
+                  ],
+        "period":  "Renacimiento, siglos XV-XVI"
+    },
+    {
+        "id":  18,
+        "total_works":  10,
+        "directory":  "artemisia-gentileschi",
+        "gender":  "Mujer",
+        "name":  "Artemisia Gentileschi",
+        "region":  "Italia",
+        "works":  [
+                      {
+                          "file":  "01_susanna_and_elders.jpg",
+                          "size_kb":  887.6
+                      },
+                      {
+                          "file":  "02_judith_beheading_holofernes.jpg",
+                          "size_kb":  200.7
+                      },
+                      {
+                          "file":  "03_danae.jpg",
+                          "size_kb":  805.4
+                      },
+                      {
+                          "file":  "04_judith_and_maidservant.jpg",
+                          "size_kb":  2351.9
+                      },
+                      {
+                          "file":  "05_salome.jpg",
+                          "size_kb":  141.1
+                      },
+                      {
+                          "file":  "06_self_portrait_martyr.jpg",
+                          "size_kb":  186.9
+                      },
+                      {
+                          "file":  "07_judith_holofernes_1620.jpg",
+                          "size_kb":  166.8
+                      },
+                      {
+                          "file":  "08_lucretia.jpg",
+                          "size_kb":  42.4
+                      },
+                      {
+                          "file":  "09_cleopatra.jpg",
+                          "size_kb":  4364.1
+                      },
+                      {
+                          "file":  "10_portrait_condottiero.jpg",
+                          "size_kb":  185.9
+                      }
+                  ],
+        "period":  "Barroco, siglo XVII"
+    },
+    {
+        "id":  19,
+        "total_works":  10,
+        "directory":  "caravaggio",
+        "gender":  "Hombre",
+        "name":  "Caravaggio",
+        "region":  "Italia",
+        "works":  [
+                      {
+                          "file":  "01_boy_with_basket_of_fruit.jpg",
+                          "size_kb":  4091.1
+                      },
+                      {
+                          "file":  "02_young_sick_bacchus.jpg",
+                          "size_kb":  3602.5
+                      },
+                      {
+                          "file":  "03_cardsharps.jpg",
+                          "size_kb":  4293
+                      },
+                      {
+                          "file":  "04_musicians.jpg",
+                          "size_kb":  181.3
+                      },
+                      {
+                          "file":  "05_bacchus.jpg",
+                          "size_kb":  9511.9
+                      },
+                      {
+                          "file":  "06_basket_of_fruit.jpg",
+                          "size_kb":  1319.8
+                      },
+                      {
+                          "file":  "07_boy_bitten_by_lizard.jpg",
+                          "size_kb":  884.7
+                      },
+                      {
+                          "file":  "08_medusa.jpg",
+                          "size_kb":  3407.3
+                      },
+                      {
+                          "file":  "09_penitent_magdalene.jpg",
+                          "size_kb":  297.6
+                      },
+                      {
+                          "file":  "10_rest_on_flight_egypt.jpg",
+                          "size_kb":  262.2
+                      }
+                  ],
+        "period":  "Barroco, siglos XVI-XVII"
+    },
+    {
+        "id":  20,
+        "total_works":  10,
+        "directory":  "judith-leyster",
+        "gender":  "Mujer",
+        "name":  "Judith Leyster",
+        "region":  "Países Bajos",
+        "works":  [
+                      {
+                          "file":  "01_the_proposition.jpg",
+                          "size_kb":  22.7
+                      },
+                      {
+                          "file":  "02_self_portrait.jpg",
+                          "size_kb":  40
+                      },
+                      {
+                          "file":  "03_game_of_tric_trac.jpg",
+                          "size_kb":  30.6
+                      },
+                      {
+                          "file":  "04_merry_company.jpg",
+                          "size_kb":  44.3
+                      },
+                      {
+                          "file":  "05_serenade.jpg",
+                          "size_kb":  32.1
+                      },
+                      {
+                          "file":  "06_the_concert.jpg",
+                          "size_kb":  53.5
+                      },
+                      {
+                          "file":  "07_girl_with_a_lute.jpg",
+                          "size_kb":  34
+                      },
+                      {
+                          "file":  "08_jolly_toper.jpg",
+                          "size_kb":  34
+                      },
+                      {
+                          "file":  "09_boy_playing_flute.jpg",
+                          "size_kb":  37.3
+                      },
+                      {
+                          "file":  "10_laughing_children_cat.jpg",
+                          "size_kb":  56
+                      }
+                  ],
+        "period":  "Barroco, siglo XVII"
+    },
+    {
+        "id":  21,
+        "total_works":  10,
+        "directory":  "velazquez",
+        "gender":  "Hombre",
+        "name":  "Diego Velázquez",
+        "region":  "España",
+        "works":  [
+                      {
+                          "file":  "01_las_meninas.jpg",
+                          "size_kb":  35.6
+                      },
+                      {
+                          "file":  "02_surrender_of_breda.jpg",
+                          "size_kb":  103.7
+                      },
+                      {
+                          "file":  "03_rokeby_venus.jpg",
+                          "size_kb":  41.5
+                      },
+                      {
+                          "file":  "04_portrait_innocent_x.jpg",
+                          "size_kb":  49
+                      },
+                      {
+                          "file":  "05_the_spinners.jpg",
+                          "size_kb":  62.5
+                      },
+                      {
+                          "file":  "06_portrait_philip_iv.jpg",
+                          "size_kb":  29.8
+                      },
+                      {
+                          "file":  "07_triumph_of_bacchus.jpg",
+                          "size_kb":  62.5
+                      },
+                      {
+                          "file":  "08_forge_of_vulcan.jpg",
+                          "size_kb":  53.6
+                      },
+                      {
+                          "file":  "09_christ_crucified.jpg",
+                          "size_kb":  22.6
+                      },
+                      {
+                          "file":  "10_old_woman_frying_eggs.jpg",
+                          "size_kb":  59.8
+                      }
+                  ],
+        "period":  "Barroco, siglo XVII"
+    },
+    {
+        "id":  22,
+        "total_works":  10,
+        "directory":  "elisabeth-vigee-le-brun",
+        "gender":  "Mujer",
+        "name":  "Élisabeth Vigée Le Brun",
+        "region":  "Francia",
+        "works":  [
+                      {
+                          "file":  "01_queen_marie_antoinette.jpg",
+                          "size_kb":  52.1
+                      },
+                      {
+                          "file":  "02_self_portrait_straw_hat.jpg",
+                          "size_kb":  34.3
+                      },
+                      {
+                          "file":  "03_marie_antoinette_children.jpg",
+                          "size_kb":  44.1
+                      },
+                      {
+                          "file":  "04_self_portrait_daughter.jpg",
+                          "size_kb":  39.3
+                      },
+                      {
+                          "file":  "05_prince_lubomirski.jpg",
+                          "size_kb":  52.4
+                      },
+                      {
+                          "file":  "06_anna_pitt_hebe.jpg",
+                          "size_kb":  24.8
+                      },
+                      {
+                          "file":  "07_madame_stael.jpg",
+                          "size_kb":  43.3
+                      },
+                      {
+                          "file":  "08_countess_golovine.jpg",
+                          "size_kb":  46
+                      },
+                      {
+                          "file":  "09_lady_hamilton.jpg",
+                          "size_kb":  24.3
+                      },
+                      {
+                          "file":  "10_caroline_murat.jpg",
+                          "size_kb":  43
+                      }
+                  ],
+        "period":  "Neoclasicismo, siglos XVIII-XIX"
+    },
+    {
+        "id":  23,
+        "total_works":  21,
+        "directory":  "vermeer",
+        "gender":  "Hombre",
+        "name":  "Johannes Vermeer",
+        "region":  "Países Bajos",
+        "works":  [
+                      {
+                          "file":  "01_diana-and-her-companions.jpg",
+                          "size_kb":  51.2
+                      },
+                      {
+                          "file":  "02_christ-in-the-house-of-martha-and-mary.jpg",
+                          "size_kb":  48.7
+                      },
+                      {
+                          "file":  "02_the-milkmaid.jpg",
+                          "size_kb":  45
+                      },
+                      {
+                          "file":  "03_saint-praxedis.jpg",
+                          "size_kb":  43
+                      },
+                      {
+                          "file":  "04_a-maid-asleep.jpg",
+                          "size_kb":  36
+                      },
+                      {
+                          "file":  "04_the-little-street.jpg",
+                          "size_kb":  52.9
+                      },
+                      {
+                          "file":  "04_the-procuress.jpg",
+                          "size_kb":  1.2
+                      },
+                      {
+                          "file":  "05_officer-and-laughing-girl.jpg",
+                          "size_kb":  55.9
+                      },
+                      {
+                          "file":  "05_the-procuress-detail-supposed-self-portrait.jpg",
+                          "size_kb":  1.2
+                      },
+                      {
+                          "file":  "06_girl-reading-a-letter-at-an-open-window.jpg",
+                          "size_kb":  1.2
+                      },
+                      {
+                          "file":  "06_the-little-street.jpg",
+                          "size_kb":  52.9
+                      },
+                      {
+                          "file":  "07_a-maid-asleep.jpg",
+                          "size_kb":  1.2
+                      },
+                      {
+                          "file":  "07_the-milkmaid.jpg",
+                          "size_kb":  45
+                      },
+                      {
+                          "file":  "08_girl-interrupted-at-her-music.jpg",
+                          "size_kb":  47.7
+                      },
+                      {
+                          "file":  "08_officer-and-laughing-girl.jpg",
+                          "size_kb":  1.2
+                      },
+                      {
+                          "file":  "08_the-glass-of-wine.jpg",
+                          "size_kb":  66.6
+                      },
+                      {
+                          "file":  "09_a-lady-and-two-gentlemen.jpg",
+                          "size_kb":  1.2
+                      },
+                      {
+                          "file":  "09_young-woman-with-a-pearl-necklace.jpg",
+                          "size_kb":  30.2
+                      },
+                      {
+                          "file":  "10_officer-and-laughing-girl.jpg",
+                          "size_kb":  55.9
+                      },
+                      {
+                          "file":  "10_the-little-street.jpg",
+                          "size_kb":  1.2
+                      },
+                      {
+                          "file":  "10_woman-with-a-lute.jpg",
+                          "size_kb":  34.9
+                      }
+                  ],
+        "period":  "Barroco, siglo XVII"
+    },
+    {
+        "id":  24,
+        "total_works":  10,
+        "directory":  "hokusai",
+        "gender":  "Hombre",
+        "name":  "Katsushika Hokusai",
+        "region":  "Japón",
+        "works":  [
+                      {
+                          "file":  "01_great_wave_off_kanagawa.jpg",
+                          "size_kb":  90.9
+                      },
+                      {
+                          "file":  "02_red_fuji.jpg",
+                          "size_kb":  84.6
+                      },
+                      {
+                          "file":  "03_rainstorm_beneath_summit.jpg",
+                          "size_kb":  52.2
+                      },
+                      {
+                          "file":  "04_dream_of_fishermans_wife.jpg",
+                          "size_kb":  110.3
+                      },
+                      {
+                          "file":  "05_kajikazawa_in_kai.jpg",
+                          "size_kb":  88.4
+                      },
+                      {
+                          "file":  "06_waterfall_amida_kiso.jpg",
+                          "size_kb":  58.1
+                      },
+                      {
+                          "file":  "07_phantom_kohada_koheiji.jpg",
+                          "size_kb":  78.2
+                      },
+                      {
+                          "file":  "08_ejiri_suruga_province.jpg",
+                          "size_kb":  91.2
+                      },
+                      {
+                          "file":  "09_tama_river_musashi.jpg",
+                          "size_kb":  63.8
+                      },
+                      {
+                          "file":  "10_fuji_from_totomi.jpg",
+                          "size_kb":  92.8
+                      }
+                  ],
+        "period":  "Ukiyo-e, siglos XVIII-XIX"
+    },
+    {
+        "id":  25,
+        "total_works":  10,
+        "directory":  "uemura-shoen",
+        "gender":  "Mujer",
+        "name":  "Uemura Shōen",
+        "region":  "Japón",
+        "works":  [
+                      {
+                          "file":  "01_springtime_of_life.jpg",
+                          "size_kb":  19.3
+                      },
+                      {
+                          "file":  "02_preparing_for_dance.jpg",
+                          "size_kb":  55.7
+                      },
+                      {
+                          "file":  "03_cherry_blossom_viewing.jpg",
+                          "size_kb":  26
+                      },
+                      {
+                          "file":  "04_flower_basket.jpg",
+                          "size_kb":  34.6
+                      },
+                      {
+                          "file":  "05_flames.jpg",
+                          "size_kb":  21.3
+                      },
+                      {
+                          "file":  "06_kinuta.jpg",
+                          "size_kb":  17.7
+                      },
+                      {
+                          "file":  "07_snow.jpg",
+                          "size_kb":  18.1
+                      },
+                      {
+                          "file":  "08_noh_dance_prelude.jpg",
+                          "size_kb":  25.8
+                      },
+                      {
+                          "file":  "09_large_snowflakes.jpg",
+                          "size_kb":  43.8
+                      },
+                      {
+                          "file":  "10_shizuka.jpg",
+                          "size_kb":  29.3
+                      }
+                  ],
+        "period":  "Nihonga, siglos XIX-XX"
+    },
+    {
+        "id":  26,
+        "total_works":  10,
+        "directory":  "turner",
+        "gender":  "Hombre",
+        "name":  "J. M. W. Turner",
+        "region":  "Reino Unido",
+        "works":  [
+                      {
+                          "file":  "01_fighting_temeraire.jpg",
+                          "size_kb":  55.3
+                      },
+                      {
+                          "file":  "02_rain_steam_speed.jpg",
+                          "size_kb":  69.4
+                      },
+                      {
+                          "file":  "03_slave_ship.jpg",
+                          "size_kb":  86.7
+                      },
+                      {
+                          "file":  "04_snow_storm.jpg",
+                          "size_kb":  103.8
+                      },
+                      {
+                          "file":  "05_burning_parliament.jpg",
+                          "size_kb":  69
+                      },
+                      {
+                          "file":  "06_fishermen_at_sea.jpg",
+                          "size_kb":  61.8
+                      },
+                      {
+                          "file":  "07_shipwreck.jpg",
+                          "size_kb":  70.8
+                      },
+                      {
+                          "file":  "08_ulysses_polyphemus.jpg",
+                          "size_kb":  61
+                      },
+                      {
+                          "file":  "09_petworth_park.jpg",
+                          "size_kb":  61.5
+                      },
+                      {
+                          "file":  "10_grand_canal_venice.jpg",
+                          "size_kb":  65.6
+                      }
+                  ],
+        "period":  "Romanticismo, siglos XVIII-XIX"
+    },
+    {
+        "id":  27,
+        "total_works":  10,
+        "directory":  "morisot",
+        "gender":  "Mujer",
+        "name":  "Berthe Morisot",
+        "region":  "Francia",
+        "works":  [
+                      {
+                          "file":  "01_the_cradle.jpg",
+                          "size_kb":  44.9
+                      },
+                      {
+                          "file":  "02_after_luncheon.jpg",
+                          "size_kb":  89.7
+                      },
+                      {
+                          "file":  "03_child_rose_garden.jpg",
+                          "size_kb":  84.2
+                      },
+                      {
+                          "file":  "04_woman_child_garden.jpg",
+                          "size_kb":  106.6
+                      },
+                      {
+                          "file":  "05_julie_daydreaming.jpg",
+                          "size_kb":  54.1
+                      },
+                      {
+                          "file":  "06_young_woman_leaning.jpg",
+                          "size_kb":  72.2
+                      },
+                      {
+                          "file":  "07_young_girl_resting.jpg",
+                          "size_kb":  66.2
+                      },
+                      {
+                          "file":  "08_woman_and_child.jpg",
+                          "size_kb":  74.3
+                      },
+                      {
+                          "file":  "09_the_hairdresser.jpg",
+                          "size_kb":  55.4
+                      },
+                      {
+                          "file":  "10_young_girl_umbrella.jpg",
+                          "size_kb":  69.9
+                      }
+                  ],
+        "period":  "Impresionismo, siglo XIX"
+    },
+    {
+        "id":  28,
+        "total_works":  10,
+        "directory":  "cezanne",
+        "gender":  "Hombre",
+        "name":  "Paul Cézanne",
+        "region":  "Francia",
+        "works":  [
+                      {
+                          "file":  "01_card_players.jpg",
+                          "size_kb":  84.9
+                      },
+                      {
+                          "file":  "02_mont_sainte_victoire.jpg",
+                          "size_kb":  70.3
+                      },
+                      {
+                          "file":  "03_large_bathers.jpg",
+                          "size_kb":  95.4
+                      },
+                      {
+                          "file":  "04_apples_oranges.jpg",
+                          "size_kb":  89.6
+                      },
+                      {
+                          "file":  "05_basket_of_apples.jpg",
+                          "size_kb":  84.9
+                      },
+                      {
+                          "file":  "06_house_in_provence.jpg",
+                          "size_kb":  69.9
+                      },
+                      {
+                          "file":  "07_boy_red_vest.jpg",
+                          "size_kb":  67.2
+                      },
+                      {
+                          "file":  "08_still_life_curtain.jpg",
+                          "size_kb":  78.4
+                      },
+                      {
+                          "file":  "09_mme_cezanne_armchair.jpg",
+                          "size_kb":  51.5
+                      },
+                      {
+                          "file":  "10_still_life_primroses.jpg",
+                          "size_kb":  66.8
+                      }
+                  ],
+        "period":  "Postimpresionismo, siglo XIX"
+    },
+    {
+        "id":  29,
+        "total_works":  10,
+        "directory":  "cassatt",
+        "gender":  "Mujer",
+        "name":  "Mary Cassatt",
+        "region":  "Estados Unidos / Francia",
+        "works":  [
+                      {
+                          "file":  "01_in_the_box.jpg",
+                          "size_kb":  158.4
+                      },
+                      {
+                          "file":  "02_children_on_beach.jpg",
+                          "size_kb":  44.9
+                      },
+                      {
+                          "file":  "03_the_bath.jpg",
+                          "size_kb":  52.6
+                      },
+                      {
+                          "file":  "04_the_letter.jpg",
+                          "size_kb":  63.3
+                      },
+                      {
+                          "file":  "05_childs_bath.jpg",
+                          "size_kb":  51.7
+                      },
+                      {
+                          "file":  "06_summertime.jpg",
+                          "size_kb":  116.7
+                      },
+                      {
+                          "file":  "07_maternity.jpg",
+                          "size_kb":  39.4
+                      },
+                      {
+                          "file":  "08_madame_meerson.jpg",
+                          "size_kb":  82.8
+                      },
+                      {
+                          "file":  "09_jules_dried.jpg",
+                          "size_kb":  46.6
+                      },
+                      {
+                          "file":  "10_young_mother_sewing.jpg",
+                          "size_kb":  53.1
+                      }
+                  ],
+        "period":  "Impresionismo, siglos XIX-XX"
+    },
+    {
+        "id":  30,
+        "total_works":  10,
+        "directory":  "gauguin",
+        "gender":  "Hombre",
+        "name":  "Paul Gauguin",
+        "region":  "Francia / Polinesia",
+        "works":  [
+                      {
+                          "file":  "01_where_do_we_come_from.jpg",
+                          "size_kb":  52.2
+                      },
+                      {
+                          "file":  "02_vision_sermon.jpg",
+                          "size_kb":  82.5
+                      },
+                      {
+                          "file":  "03_yellow_christ.jpg",
+                          "size_kb":  58.3
+                      },
+                      {
+                          "file":  "04_spirit_dead.jpg",
+                          "size_kb":  78.4
+                      },
+                      {
+                          "file":  "05_tahitian_women_beach.jpg",
+                          "size_kb":  46
+                      },
+                      {
+                          "file":  "06_when_will_you_marry.jpg",
+                          "size_kb":  54.8
+                      },
+                      {
+                          "file":  "07_woman_flower.jpg",
+                          "size_kb":  57.8
+                      },
+                      {
+                          "file":  "08_arearea.jpg",
+                          "size_kb":  132.2
+                      },
+                      {
+                          "file":  "09_fatata_te_miti.jpg",
+                          "size_kb":  54.9
+                      },
+                      {
+                          "file":  "10_nevermore.jpg",
+                          "size_kb":  55.2
+                      }
+                  ],
+        "period":  "Postimpresionismo, siglo XIX"
+    },
+    {
+        "id":  31,
+        "total_works":  10,
+        "directory":  "edmonia-lewis",
+        "gender":  "Mujer",
+        "name":  "Edmonia Lewis",
+        "region":  "Estados Unidos",
+        "works":  [
+                      {
+                          "file":  "01_anna_quincy_waterstone.jpg",
+                          "size_kb":  109.6
+                      },
+                      {
+                          "file":  "02_columbus.png",
+                          "size_kb":  3210.9
+                      },
+                      {
+                          "file":  "03_hiawatha.jpg",
+                          "size_kb":  102.9
+                      },
+                      {
+                          "file":  "04_minnehaha.jpg",
+                          "size_kb":  111.5
+                      },
+                      {
+                          "file":  "05_bust_of_dr_dio_lewis.jpg",
+                          "size_kb":  2225.6
+                      },
+                      {
+                          "file":  "06_indian_combat.jpg",
+                          "size_kb":  5416.8
+                      },
+                      {
+                          "file":  "07_hiawathas_marriage.jpg",
+                          "size_kb":  2280.4
+                      },
+                      {
+                          "file":  "08_old_arrow_maker.jpg",
+                          "size_kb":  80
+                      },
+                      {
+                          "file":  "09_young_octavian.jpg",
+                          "size_kb":  31.4
+                      },
+                      {
+                          "file":  "10_hagar.jpg",
+                          "size_kb":  90.2
+                      }
+                  ],
+        "period":  "Neoclasicismo, siglo XIX"
+    },
+    {
+        "id":  32,
+        "total_works":  10,
+        "directory":  "kandinsky",
+        "gender":  "Hombre",
+        "name":  "Wassily Kandinsky",
+        "region":  "Rusia / Alemania",
+        "works":  [
+                      {
+                          "file":  "01_composition_vii.jpg",
+                          "size_kb":  102
+                      },
+                      {
+                          "file":  "02_composition_viii.jpg",
+                          "size_kb":  76.5
+                      },
+                      {
+                          "file":  "03_yellow_red_blue.jpg",
+                          "size_kb":  58.5
+                      },
+                      {
+                          "file":  "04_on_white_ii.jpg",
+                          "size_kb":  51.8
+                      },
+                      {
+                          "file":  "05_improvisation_28.jpg",
+                          "size_kb":  85.9
+                      },
+                      {
+                          "file":  "06_several_circles.jpg",
+                          "size_kb":  35.4
+                      },
+                      {
+                          "file":  "07_improvisation_31.jpg",
+                          "size_kb":  66.3
+                      },
+                      {
+                          "file":  "08_black_and_violet.jpg",
+                          "size_kb":  110.2
+                      },
+                      {
+                          "file":  "09_blue_mountain.jpg",
+                          "size_kb":  70.4
+                      },
+                      {
+                          "file":  "10_blue_rider.jpg",
+                          "size_kb":  89.2
+                      }
+                  ],
+        "period":  "Abstracción, siglos XIX-XX"
+    },
+    {
+        "id":  33,
+        "total_works":  10,
+        "directory":  "sonia-delaunay",
+        "gender":  "Mujer",
+        "name":  "Sonia Delaunay",
+        "region":  "Ucrania / Francia",
+        "works":  [
+                      {
+                          "file":  "01_rhythm_color.jpg",
+                          "size_kb":  45
+                      },
+                      {
+                          "file":  "02_electric_prisms.jpg",
+                          "size_kb":  61
+                      },
+                      {
+                          "file":  "03_simultaneous_dress.jpg",
+                          "size_kb":  37.9
+                      },
+                      {
+                          "file":  "04_the_bal_bullier.jpg",
+                          "size_kb":  30.2
+                      },
+                      {
+                          "file":  "05_portuguese_market.jpg",
+                          "size_kb":  39
+                      },
+                      {
+                          "file":  "06_prose_trans_siberian.jpg",
+                          "size_kb":  61.4
+                      },
+                      {
+                          "file":  "07_market_at_minho.jpg",
+                          "size_kb":  93.7
+                      },
+                      {
+                          "file":  "08_color_rhythm_1967.jpg",
+                          "size_kb":  30.1
+                      },
+                      {
+                          "file":  "09_composition_red_blue_black_white.jpg",
+                          "size_kb":  31
+                      },
+                      {
+                          "file":  "10_three_women_simultaneous.jpg",
+                          "size_kb":  58.4
+                      }
+                  ],
+        "period":  "Orfismo y abstracción, siglo XX"
+    },
+    {
+        "id":  34,
+        "total_works":  10,
+        "directory":  "rivera",
+        "gender":  "Hombre",
+        "name":  "Diego Rivera",
+        "region":  "México",
+        "works":  [
+                      {
+                          "file":  "01_creation.jpg",
+                          "size_kb":  135.8
+                      },
+                      {
+                          "file":  "02_the_arsenal.jpg",
+                          "size_kb":  396.2
+                      },
+                      {
+                          "file":  "03_frozen_assets.jpg",
+                          "size_kb":  1307.1
+                      },
+                      {
+                          "file":  "04_detroit_industry_north_wall.jpg",
+                          "size_kb":  82.8
+                      },
+                      {
+                          "file":  "05_man_at_the_crossroads.jpg",
+                          "size_kb":  97.4
+                      },
+                      {
+                          "file":  "06_flower_carrier.jpg",
+                          "size_kb":  216.6
+                      },
+                      {
+                          "file":  "07_pan_american_unity.jpg",
+                          "size_kb":  386.5
+                      },
+                      {
+                          "file":  "08_history_of_medicine.jpg",
+                          "size_kb":  95.7
+                      },
+                      {
+                          "file":  "09_banana_leaf_loader.jpg",
+                          "size_kb":  897.9
+                      },
+                      {
+                          "file":  "10_painters_studio.jpg",
+                          "size_kb":  278.1
+                      }
+                  ],
+        "period":  "Muralismo, siglo XX"
+    },
+    {
+        "id":  35,
+        "total_works":  10,
+        "directory":  "tarsila-do-amaral",
+        "gender":  "Mujer",
+        "name":  "Tarsila do Amaral",
+        "region":  "Brasil",
+        "works":  [
+                      {
+                          "file":  "01_abaporu.jpg",
+                          "size_kb":  85.1
+                      },
+                      {
+                          "file":  "02_a_negra.jpg",
+                          "size_kb":  87.8
+                      },
+                      {
+                          "file":  "03_antropofagia.jpg",
+                          "size_kb":  99.8
+                      },
+                      {
+                          "file":  "04_estrada_de_ferro.jpg",
+                          "size_kb":  18.5
+                      },
+                      {
+                          "file":  "05_manaca.jpg",
+                          "size_kb":  130.9
+                      },
+                      {
+                          "file":  "06_a_lua.jpg",
+                          "size_kb":  96.4
+                      },
+                      {
+                          "file":  "07_pescador.jpg",
+                          "size_kb":  329.4
+                      },
+                      {
+                          "file":  "08_postcard.jpg",
+                          "size_kb":  120.5
+                      },
+                      {
+                          "file":  "09_o_lago.jpg",
+                          "size_kb":  108.2
+                      },
+                      {
+                          "file":  "10_o_ovo.jpg",
+                          "size_kb":  75.6
+                      }
+                  ],
+        "period":  "Modernismo, siglo XX"
+    },
+    {
+        "id":  36,
+        "total_works":  10,
+        "directory":  "lam",
+        "gender":  "Hombre",
+        "name":  "Wifredo Lam",
+        "region":  "Cuba",
+        "works":  [
+                      {
+                          "file":  "01_the_jungle.jpg",
+                          "size_kb":  189.8
+                      },
+                      {
+                          "file":  "02_sombre_malembo.jpg",
+                          "size_kb":  118
+                      },
+                      {
+                          "file":  "03_mofumbe.jpg",
+                          "size_kb":  150.6
+                      },
+                      {
+                          "file":  "04_the_murmur.jpg",
+                          "size_kb":  1086.5
+                      },
+                      {
+                          "file":  "05_femme_cheval.jpg",
+                          "size_kb":  2369.9
+                      },
+                      {
+                          "file":  "06_the_fiance.jpg",
+                          "size_kb":  1166.9
+                      },
+                      {
+                          "file":  "07_fiancee_kiriwina.jpg",
+                          "size_kb":  65.1
+                      },
+                      {
+                          "file":  "08_zambezia_zambezia.jpg",
+                          "size_kb":  24.8
+                      },
+                      {
+                          "file":  "09_ibaye.jpg",
+                          "size_kb":  228.1
+                      },
+                      {
+                          "file":  "10_adam_and_eve.jpg",
+                          "size_kb":  68.9
+                      }
+                  ],
+        "period":  "Modernismo y surrealismo, siglo XX"
+    },
+    {
+        "id":  37,
+        "total_works":  10,
+        "directory":  "amrita-sher-gil",
+        "gender":  "Mujer",
+        "name":  "Amrita Sher-Gil",
+        "region":  "India / Hungría",
+        "works":  [
+                      {
+                          "file":  "01_three_girls.jpg",
+                          "size_kb":  39.1
+                      },
+                      {
+                          "file":  "02_bride_toilet.jpg",
+                          "size_kb":  60.3
+                      },
+                      {
+                          "file":  "03_hill_women.jpg",
+                          "size_kb":  34.8
+                      },
+                      {
+                          "file":  "04_ancient_storyteller.jpg",
+                          "size_kb":  38
+                      },
+                      {
+                          "file":  "05_sleeping_woman.jpg",
+                          "size_kb":  53.5
+                      },
+                      {
+                          "file":  "06_hungarian_market_scene.jpg",
+                          "size_kb":  42.3
+                      },
+                      {
+                          "file":  "07_child_bride.jpg",
+                          "size_kb":  45.5
+                      },
+                      {
+                          "file":  "08_the_bride.jpg",
+                          "size_kb":  23.2
+                      },
+                      {
+                          "file":  "09_woman_on_charpai.jpg",
+                          "size_kb":  68.3
+                      },
+                      {
+                          "file":  "10_young_girls.jpg",
+                          "size_kb":  53.2
+                      }
+                  ],
+        "period":  "Modernismo, siglo XX"
+    },
+    {
+        "id":  38,
+        "total_works":  10,
+        "directory":  "tamayo",
+        "gender":  "Hombre",
+        "name":  "Rufino Tamayo",
+        "region":  "México",
+        "works":  [
+                      {
+                          "file":  "01_ninos_jugando_con_fuego.jpg",
+                          "size_kb":  56.5
+                      },
+                      {
+                          "file":  "02_the_troubadour.jpg",
+                          "size_kb":  50.9
+                      },
+                      {
+                          "file":  "03_la_gran_galaxia.jpg",
+                          "size_kb":  69
+                      },
+                      {
+                          "file":  "04_watermelons.jpg",
+                          "size_kb":  81.6
+                      },
+                      {
+                          "file":  "05_america.jpg",
+                          "size_kb":  29.2
+                      },
+                      {
+                          "file":  "06_moon_dog.jpg",
+                          "size_kb":  122
+                      },
+                      {
+                          "file":  "07_three_people.jpg",
+                          "size_kb":  67.8
+                      },
+                      {
+                          "file":  "08_childrens_games.jpg",
+                          "size_kb":  114.4
+                      },
+                      {
+                          "file":  "09_woman_with_red_mask.jpg",
+                          "size_kb":  56.8
+                      },
+                      {
+                          "file":  "10_hombre_sacando_lengua.jpg",
+                          "size_kb":  69.4
+                      }
+                  ],
+        "period":  "Modernismo, siglo XX"
+    },
+    {
+        "id":  39,
+        "total_works":  10,
+        "directory":  "kusama",
+        "gender":  "Mujer",
+        "name":  "Yayoi Kusama",
+        "region":  "Japón",
+        "works":  [
+                      {
+                          "file":  "01_waves-1953.jpg",
+                          "size_kb":  204.3
+                      },
+                      {
+                          "file":  "02_woman-in-the-wind-1977.jpg",
+                          "size_kb":  77.5
+                      },
+                      {
+                          "file":  "03_still-life-of-candlestick-1978.jpg",
+                          "size_kb":  139.4
+                      },
+                      {
+                          "file":  "04_traveling-water-1980.jpg",
+                          "size_kb":  185.4
+                      },
+                      {
+                          "file":  "05_dress-1982.jpg",
+                          "size_kb":  193.1
+                      },
+                      {
+                          "file":  "06_flowers-1983.jpg",
+                          "size_kb":  418.9
+                      },
+                      {
+                          "file":  "07_pumpkin-1983.jpg",
+                          "size_kb":  146
+                      },
+                      {
+                          "file":  "08_dandelions-1985.jpg",
+                          "size_kb":  237.9
+                      },
+                      {
+                          "file":  "09_yellow-pumpkin-1992.jpg",
+                          "size_kb":  187.2
+                      },
+                      {
+                          "file":  "10_mushrooms-1995.jpg",
+                          "size_kb":  226.3
+                      }
+                  ],
+        "period":  "Vanguardia contemporánea, siglos XX-XXI"
+    },
+    {
+        "id":  40,
+        "total_works":  10,
+        "directory":  "basquiat",
+        "gender":  "Hombre",
+        "name":  "Jean-Michel Basquiat",
+        "region":  "Estados Unidos",
+        "works":  [
+                      {
+                          "file":  "01_boy-and-dog-in-a-johnnypump.jpg",
+                          "size_kb":  650.8
+                      },
+                      {
+                          "file":  "02_charles-the-first.jpg",
+                          "size_kb":  1317.6
+                      },
+                      {
+                          "file":  "03_hollywood-africans.jpg",
+                          "size_kb":  811.7
+                      },
+                      {
+                          "file":  "04_ironew-york-of-the-negro-policeman.jpg",
+                          "size_kb":  736.2
+                      },
+                      {
+                          "file":  "05_in-this-case.jpg",
+                          "size_kb":  398.9
+                      },
+                      {
+                          "file":  "06_riding-with-death.jpg",
+                          "size_kb":  344
+                      },
+                      {
+                          "file":  "07_untitled-1.jpg",
+                          "size_kb":  446.2
+                      },
+                      {
+                          "file":  "08_untitled-2.jpg",
+                          "size_kb":  598.7
+                      },
+                      {
+                          "file":  "09_untitled.jpg",
+                          "size_kb":  115.6
+                      },
+                      {
+                          "file":  "10_head.jpg",
+                          "size_kb":  799.8
+                      }
+                  ],
+        "period":  "Neoexpresionismo, siglo XX"
+    },
+    {
+        "id":  41,
+        "total_works":  10,
+        "directory":  "ringgold",
+        "gender":  "Mujer",
+        "name":  "Faith Ringgold",
+        "region":  "Estados Unidos",
+        "works":  [
+                      {
+                          "file":  "01_tar_beach.jpg",
+                          "size_kb":  1332.3
+                      },
+                      {
+                          "file":  "02_die.jpg",
+                          "size_kb":  141
+                      },
+                      {
+                          "file":  "03_flag_is_bleeding.jpg",
+                          "size_kb":  136.5
+                      },
+                      {
+                          "file":  "04_sunflowers_quilting_bee.jpg",
+                          "size_kb":  358.7
+                      },
+                      {
+                          "file":  "05_echoes_of_harlem.jpg",
+                          "size_kb":  230.6
+                      },
+                      {
+                          "file":  "06_tar_beach_2.jpg",
+                          "size_kb":  85
+                      },
+                      {
+                          "file":  "07_slave_rape_story_quilt.jpg",
+                          "size_kb":  404.2
+                      },
+                      {
+                          "file":  "08_hide_little_children.jpg",
+                          "size_kb":  146.5
+                      },
+                      {
+                          "file":  "09_all_power_to_the_people.jpg",
+                          "size_kb":  90.9
+                      },
+                      {
+                          "file":  "10_civil_rights_triangle.jpg",
+                          "size_kb":  76.5
+                      }
+                  ],
+        "period":  "Arte político y narrativo, siglos XX-XXI"
+    },
+    {
+        "id":  42,
+        "total_works":  10,
+        "directory":  "niki-de-saint-phalle",
+        "gender":  "Mujer",
+        "name":  "Niki de Saint Phalle",
+        "region":  "Francia / Estados Unidos",
+        "works":  [
+                      {
+                          "file":  "01_shooting_picture.jpg",
+                          "size_kb":  216.1
+                      },
+                      {
+                          "file":  "02_nana.jpg",
+                          "size_kb":  34
+                      },
+                      {
+                          "file":  "03_all_over.jpg",
+                          "size_kb":  224.8
+                      },
+                      {
+                          "file":  "04_be_my_frankenstein.jpg",
+                          "size_kb":  225.1
+                      },
+                      {
+                          "file":  "05_adriana.jpg",
+                          "size_kb":  61.2
+                      },
+                      {
+                          "file":  "06_green_goddess.jpg",
+                          "size_kb":  34
+                      },
+                      {
+                          "file":  "07_red_sun.jpg",
+                          "size_kb":  283.6
+                      },
+                      {
+                          "file":  "08_garden.jpg",
+                          "size_kb":  151.1
+                      },
+                      {
+                          "file":  "09_loiseau_amoureux.jpg",
+                          "size_kb":  45.5
+                      },
+                      {
+                          "file":  "10_dear_diary.jpg",
+                          "size_kb":  116
+                      }
+                  ],
+        "period":  "Nuevo Realismo, siglo XX"
+    },
+    {
+        "id":  43,
+        "total_works":  10,
+        "directory":  "nolan",
+        "gender":  "Hombre",
+        "name":  "Sidney Nolan",
+        "region":  "Australia",
+        "works":  [
+                      {
+                          "file":  "01_ned_kelly.jpg",
+                          "size_kb":  108.8
+                      },
+                      {
+                          "file":  "02_the_trial.jpg",
+                          "size_kb":  137.1
+                      },
+                      {
+                          "file":  "03_inland_australia.jpg",
+                          "size_kb":  69.8
+                      },
+                      {
+                          "file":  "04_carcase_in_swamp.jpg",
+                          "size_kb":  66.6
+                      },
+                      {
+                          "file":  "05_desert_storm.jpg",
+                          "size_kb":  47.9
+                      },
+                      {
+                          "file":  "06_glenrowan.jpg",
+                          "size_kb":  54.6
+                      },
+                      {
+                          "file":  "07_in_the_cave.jpg",
+                          "size_kb":  94.2
+                      },
+                      {
+                          "file":  "08_women_and_billabong.jpg",
+                          "size_kb":  58.5
+                      },
+                      {
+                          "file":  "09_kelly.jpg",
+                          "size_kb":  42
+                      },
+                      {
+                          "file":  "10_camel_and_figure.jpg",
+                          "size_kb":  44.1
+                      }
+                  ],
+        "period":  "Modernismo, siglo XX"
+    },
+    {
+        "id":  44,
+        "total_works":  10,
+        "directory":  "emily-kngwarreye",
+        "gender":  "Mujer",
+        "name":  "Emily Kame Kngwarreye",
+        "region":  "Australia",
+        "works":  [
+                      {
+                          "file":  "01_big_yam.jpg",
+                          "size_kb":  106.2
+                      },
+                      {
+                          "file":  "02_big_yam_dreaming.jpg",
+                          "size_kb":  105.2
+                      },
+                      {
+                          "file":  "03_my_country.jpg",
+                          "size_kb":  17.6
+                      },
+                      {
+                          "file":  "04_awelye.jpg",
+                          "size_kb":  66.1
+                      },
+                      {
+                          "file":  "05_desert_flowers.jpg",
+                          "size_kb":  65.9
+                      },
+                      {
+                          "file":  "06_body_paint_design.jpg",
+                          "size_kb":  34.8
+                      },
+                      {
+                          "file":  "07_arlatyey_bush_yam_dreaming.jpg",
+                          "size_kb":  140.3
+                      },
+                      {
+                          "file":  "08_my_last_dream.jpg",
+                          "size_kb":  61
+                      },
+                      {
+                          "file":  "09_merne_everything.jpg",
+                          "size_kb":  108
+                      },
+                      {
+                          "file":  "10_anooralya_iii.jpg",
+                          "size_kb":  81.4
+                      }
+                  ],
+        "period":  "Arte aborigen contemporáneo, siglo XX"
+    },
+    {
+        "id":  45,
+        "total_works":  10,
+        "directory":  "anatsui",
+        "gender":  "Hombre",
+        "name":  "El Anatsui",
+        "region":  "Ghana / Nigeria",
+        "works":  [
+                      {
+                          "file":  "01_bleeding_takari.jpg",
+                          "size_kb":  246.2
+                      },
+                      {
+                          "file":  "02_ozone_layer.jpg",
+                          "size_kb":  64.9
+                      },
+                      {
+                          "file":  "03_gravity_and_grace.jpg",
+                          "size_kb":  219.1
+                      },
+                      {
+                          "file":  "04_drifting_continents.jpg",
+                          "size_kb":  235.5
+                      },
+                      {
+                          "file":  "05_tagomizer.png",
+                          "size_kb":  503.9
+                      },
+                      {
+                          "file":  "06_gli_wall.jpg",
+                          "size_kb":  164.1
+                      },
+                      {
+                          "file":  "07_communication_lines.png",
+                          "size_kb":  752.4
+                      },
+                      {
+                          "file":  "08_old_cloth_series.jpg",
+                          "size_kb":  93.1
+                      },
+                      {
+                          "file":  "09_red_block.jpg",
+                          "size_kb":  121.7
+                      },
+                      {
+                          "file":  "10_waste_paper_bags.jpg",
+                          "size_kb":  132.6
+                      }
+                  ],
+        "period":  "Arte contemporáneo, siglos XX-XXI"
+    },
+    {
+        "id":  46,
+        "total_works":  10,
+        "directory":  "dumas",
+        "gender":  "Mujer",
+        "name":  "Marlene Dumas",
+        "region":  "Sudáfrica / Países Bajos",
+        "works":  [
+                      {
+                          "file":  "01_genetiese-heimwee-genetic-longing-1984.png",
+                          "size_kb":  336.7
+                      },
+                      {
+                          "file":  "02_evil-is-banal-1984.jpg",
+                          "size_kb":  68.1
+                      },
+                      {
+                          "file":  "03_the-white-disease-1985.jpg",
+                          "size_kb":  51.6
+                      },
+                      {
+                          "file":  "04_the-luxury-of-tenderness-1986.png",
+                          "size_kb":  383.9
+                      },
+                      {
+                          "file":  "05_the-painter-1994.jpg",
+                          "size_kb":  62.1
+                      },
+                      {
+                          "file":  "06_chlorosis-love-sick-1994.jpg",
+                          "size_kb":  40.9
+                      },
+                      {
+                          "file":  "07_naomi-1995.png",
+                          "size_kb":  347.7
+                      },
+                      {
+                          "file":  "08_the-supermodel-1995.png",
+                          "size_kb":  267.9
+                      },
+                      {
+                          "file":  "09_magdalena-1-1996.jpg",
+                          "size_kb":  65.3
+                      },
+                      {
+                          "file":  "10_liz-taylor-1993.png",
+                          "size_kb":  381.2
+                      }
+                  ],
+        "period":  "Pintura contemporánea, siglos XX-XXI"
+    },
+    {
+        "id":  47,
+        "total_works":  10,
+        "directory":  "el-salahi",
+        "gender":  "Hombre",
+        "name":  "Ibrahim El-Salahi",
+        "region":  "Sudán",
+        "works":  [
+                      {
+                          "file":  "01_self_portrait_of_suffering.jpg",
+                          "size_kb":  73.7
+                      },
+                      {
+                          "file":  "02_the_last_sound.jpg",
+                          "size_kb":  71.3
+                      },
+                      {
+                          "file":  "03_a_vision_of_the_tomb.jpg",
+                          "size_kb":  63.3
+                      },
+                      {
+                          "file":  "04_reborn_sounds_of_childhood_dreams_i.jpg",
+                          "size_kb":  75.5
+                      },
+                      {
+                          "file":  "05_they_always_appear.jpg",
+                          "size_kb":  76.6
+                      },
+                      {
+                          "file":  "06_the_inevitable.jpg",
+                          "size_kb":  85.3
+                      },
+                      {
+                          "file":  "07_the_tree.jpg",
+                          "size_kb":  78.6
+                      },
+                      {
+                          "file":  "08_funeral_and_crescent.jpg",
+                          "size_kb":  31.5
+                      },
+                      {
+                          "file":  "09_reborn_sounds_of_childhood_dreams_ii.jpg",
+                          "size_kb":  99.3
+                      },
+                      {
+                          "file":  "10_the_bull_and_the_mint_shrub.jpg",
+                          "size_kb":  40.8
+                      }
+                  ],
+        "period":  "Modernismo africano, siglos XX-XXI"
+    },
+    {
+        "id":  48,
+        "total_works":  10,
+        "directory":  "akunyili-crosby",
+        "gender":  "Mujer",
+        "name":  "Njideka Akunyili Crosby",
+        "region":  "Nigeria / Estados Unidos",
+        "works":  [
+                      {
+                          "file":  "01_i_refuse_to_be_invisible.jpg",
+                          "size_kb":  315.6
+                      },
+                      {
+                          "file":  "02_janded.jpg",
+                          "size_kb":  151.4
+                      },
+                      {
+                          "file":  "03_nwantinti.jpg",
+                          "size_kb":  242.4
+                      },
+                      {
+                          "file":  "04_tea_time_in_new_haven_enugu.jpg",
+                          "size_kb":  171.9
+                      },
+                      {
+                          "file":  "05_the_beautyful_ones_series_1.jpg",
+                          "size_kb":  56.6
+                      },
+                      {
+                          "file":  "06_then_you_lost_me.jpg",
+                          "size_kb":  208.7
+                      },
+                      {
+                          "file":  "07_something_split_and_new.jpg",
+                          "size_kb":  2194.2
+                      },
+                      {
+                          "file":  "08_thread.jpg",
+                          "size_kb":  255.8
+                      },
+                      {
+                          "file":  "09_cradle_your_conquest.jpg",
+                          "size_kb":  237.5
+                      },
+                      {
+                          "file":  "10_nkem.jpg",
+                          "size_kb":  268.2
+                      }
+                  ],
+        "period":  "Pintura contemporánea, siglos XX-XXI"
+    },
+    {
+        "id":  49,
+        "total_works":  10,
+        "directory":  "zhang-daqian",
+        "gender":  "Hombre",
+        "name":  "Zhang Daqian",
+        "region":  "China",
+        "works":  [
+                      {
+                          "file":  "01_lotus.jpg",
+                          "size_kb":  37.4
+                      },
+                      {
+                          "file":  "02_lotus_mandarin_ducks.jpg",
+                          "size_kb":  38.4
+                      },
+                      {
+                          "file":  "03_splashed_color_landscape.jpg",
+                          "size_kb":  110.8
+                      },
+                      {
+                          "file":  "04_peach_blossom_spring.jpg",
+                          "size_kb":  31.1
+                      },
+                      {
+                          "file":  "05_mist_at_dawn.jpg",
+                          "size_kb":  81.7
+                      },
+                      {
+                          "file":  "06_crabapple_blossoms.jpg",
+                          "size_kb":  19.6
+                      },
+                      {
+                          "file":  "07_early_snow.jpg",
+                          "size_kb":  45.8
+                      },
+                      {
+                          "file":  "08_children_pomegranate.jpg",
+                          "size_kb":  31.2
+                      },
+                      {
+                          "file":  "09_shitao_wilderness.jpg",
+                          "size_kb":  40.7
+                      },
+                      {
+                          "file":  "10_beauty_red_kerchief.jpg",
+                          "size_kb":  31.9
+                      }
+                  ],
+        "period":  "Pintura china moderna, siglo XX"
+    },
+    {
+        "id":  50,
+        "total_works":  10,
+        "directory":  "muholi",
+        "gender":  "Mujer",
+        "name":  "Zanele Muholi",
+        "region":  "Sudáfrica",
+        "works":  [
+                      {
+                          "file":  "01_somnyama-i-paris.jpg",
+                          "size_kb":  4576.7
+                      },
+                      {
+                          "file":  "02_bester-i-mayotte.jpg",
+                          "size_kb":  4641.5
+                      },
+                      {
+                          "file":  "03_somnyama-iv-oslo.jpg",
+                          "size_kb":  4423.4
+                      },
+                      {
+                          "file":  "04_sunday-francis-mdlankomo-vosloorus.jpg",
+                          "size_kb":  372.1
+                      },
+                      {
+                          "file":  "05_pam-dlungwana-vredehoek.jpg",
+                          "size_kb":  125.3
+                      },
+                      {
+                          "file":  "06_sosi-molotsane-yeoville-johannesburg.jpg",
+                          "size_kb":  3731.6
+                      },
+                      {
+                          "file":  "07_puleng-mahlati-embekweni-paarl.jpg",
+                          "size_kb":  9212.5
+                      },
+                      {
+                          "file":  "08_somnyama-ii-oslo.jpg",
+                          "size_kb":  193.6
+                      },
+                      {
+                          "file":  "09_tumi-mokgosi-yeoville-johannesburg.jpg",
+                          "size_kb":  2999.1
+                      },
+                      {
+                          "file":  "10_zimaseka-zim-salusalu-gugulethu.jpg",
+                          "size_kb":  132.2
+                      }
+                  ],
+        "period":  "Arte visual contemporáneo, siglos XX-XXI"
+    }
+]

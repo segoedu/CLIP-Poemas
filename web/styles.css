@@ -1,0 +1,723 @@
+/* ============================================================
+   Poemas & Pinturas · Afinidades — estilos
+   Galería oscura, tipografía literaria, sin dependencias.
+   ============================================================ */
+
+:root {
+  --bg: #101418;
+  --bg-soft: #151a20;
+  --surface: #1b222b;
+  --surface-2: #222b36;
+  --border: #2d3846;
+  --border-soft: #242e3a;
+  --text: #e8e4da;
+  --text-dim: #9aa6b5;
+  --text-faint: #6b7888;
+  --accent: #d9a95f;
+  --accent-soft: #d9a95f22;
+  --accent-2: #8fb7c9;
+  --danger: #c96f6f;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+  --font-serif: Georgia, 'Times New Roman', 'Iowan Old Style', serif;
+  --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --header-h: 64px;
+}
+
+* { box-sizing: border-box; }
+
+html, body { margin: 0; padding: 0; }
+
+body {
+  background:
+    radial-gradient(1200px 600px at 80% -10%, rgba(217, 169, 95, 0.06), transparent 60%),
+    radial-gradient(900px 500px at -10% 10%, rgba(143, 183, 201, 0.05), transparent 55%),
+    var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { color: #ecc98a; }
+
+img { max-width: 100%; display: block; }
+
+/* ---------- Cabecera ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  height: var(--header-h);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 0 22px;
+  background: rgba(16, 20, 24, 0.88);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  color: var(--text);
+}
+.brand:hover { color: var(--text); }
+.brand-mark {
+  font-size: 26px;
+  color: var(--accent);
+  line-height: 1;
+}
+.brand-text { display: flex; flex-direction: column; line-height: 1.2; }
+.brand-title { font-family: var(--font-serif); font-size: 18px; letter-spacing: 0.02em; }
+.brand-sub { font-size: 11px; color: var(--text-faint); letter-spacing: 0.08em; text-transform: uppercase; }
+
+.header-actions {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.global-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  max-width: 340px;
+  width: 100%;
+}
+.global-search-icon {
+  position: absolute;
+  left: 12px;
+  color: var(--text-faint);
+  font-size: 15px;
+  pointer-events: none;
+}
+.global-search input {
+  width: 100%;
+  padding: 8px 12px 8px 34px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--bg-soft);
+  color: var(--text);
+  font: inherit;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.global-search input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+.global-search input::placeholder { color: var(--text-faint); }
+
+.main-nav { display: flex; gap: 6px; }
+.main-nav a {
+  padding: 7px 14px;
+  border-radius: 999px;
+  color: var(--text-dim);
+  font-size: 14px;
+  transition: background 0.15s, color 0.15s;
+}
+.main-nav a:hover { color: var(--text); background: var(--surface-2); }
+.main-nav a.active { color: var(--accent); background: var(--accent-soft); }
+
+/* ---------- Contenedor general ---------- */
+.app { min-height: calc(100vh - var(--header-h) - 90px); }
+.container { max-width: 1180px; margin: 0 auto; padding: 34px 22px 60px; }
+.container-narrow { max-width: 900px; }
+
+/* ---------- Cabeceras de vista ---------- */
+.view-head { margin-bottom: 26px; }
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 13px;
+  color: var(--text-faint);
+  margin-bottom: 12px;
+}
+.breadcrumbs a { color: var(--text-dim); }
+.breadcrumbs a:hover { color: var(--accent); }
+.breadcrumbs .sep { color: var(--border); }
+
+.page-title {
+  font-family: var(--font-serif);
+  font-size: clamp(26px, 4vw, 40px);
+  font-weight: 400;
+  margin: 0 0 6px;
+  line-height: 1.15;
+}
+.page-sub { color: var(--text-dim); margin: 0 0 18px; max-width: 60ch; }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 11px;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  font-size: 12.5px;
+}
+.chip b { color: var(--text); font-weight: 600; }
+.chip .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
+
+/* ---------- Selector segmentado ---------- */
+.toolbar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding: 14px 16px;
+  margin-bottom: 22px;
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+}
+.toolbar-label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.09em; }
+.toolbar .hint { font-size: 12px; color: var(--text-faint); }
+
+.seg {
+  display: inline-flex;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  overflow: hidden;
+  background: var(--bg-soft);
+}
+.seg button {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--text-dim);
+  font: inherit;
+  font-size: 13.5px;
+  padding: 7px 14px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.seg button + button { border-left: 1px solid var(--border); }
+.seg button:hover { color: var(--text); }
+.seg button.active { background: var(--accent-soft); color: var(--accent); }
+
+.select {
+  appearance: none;
+  padding: 7px 30px 7px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--bg-soft) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6'><path d='M1 1l4 4 4-4' stroke='%239aa6b5' fill='none' stroke-width='1.5'/></svg>") no-repeat right 12px center;
+  color: var(--text);
+  font: inherit;
+  font-size: 13.5px;
+  cursor: pointer;
+}
+.select:focus { outline: none; border-color: var(--accent); }
+
+/* ---------- Tarjetas de pintor (ranking) ---------- */
+.rank-list { display: flex; flex-direction: column; gap: 14px; }
+
+.rank-card {
+  display: grid;
+  grid-template-columns: 92px 1fr auto;
+  gap: 18px;
+  align-items: center;
+  padding: 10px 14px;
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
+}
+.rank-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+.rank-card .thumb {
+  width: 92px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  background: var(--bg-soft);
+}
+.rank-card .info { min-width: 0; }
+.rank-card .info .name { font-family: var(--font-serif); font-size: 19px; margin: 0 0 2px; }
+.rank-card .info .meta { font-size: 12.5px; color: var(--text-faint); margin-bottom: 8px; }
+.rank-card .score {
+  text-align: right;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+.rank-card .score .value { font-size: 19px; font-weight: 600; color: var(--accent); font-variant-numeric: tabular-nums; }
+.rank-card .score .hint { font-size: 12px; color: var(--text-faint); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 260px; }
+
+.rank-card .pos {
+  position: absolute;
+  margin: -4px 0 0 -4px;
+  width: 26px; height: 26px;
+  display: grid; place-items: center;
+  border-radius: 50%;
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  font-size: 12.5px;
+  color: var(--text-dim);
+}
+.rank-card .pos.top { color: var(--accent); border-color: var(--accent); }
+
+/* ---------- Galerías ---------- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 18px;
+}
+.work-card {
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
+  display: flex;
+  flex-direction: column;
+}
+.work-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+}
+.work-card .frame { aspect-ratio: 4 / 3; background: var(--bg-soft); overflow: hidden; }
+.work-card .frame img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+.work-card:hover .frame img { transform: scale(1.04); }
+.work-card .body { padding: 12px 14px 13px; display: flex; flex-direction: column; gap: 5px; flex: 1; }
+.work-card .body .title { font-family: var(--font-serif); font-size: 15.5px; margin: 0; }
+.work-card .body .sub { font-size: 11.5px; color: var(--text-faint); font-style: italic; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.work-card .body .meta { font-size: 11.5px; color: var(--text-faint); }
+.work-card .body .frag { font-size: 12.5px; color: var(--text-dim); line-height: 1.45; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.work-card .body .foot { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: auto; padding-top: 8px; }
+.work-card .badge {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* ---------- Tarjetas de poeta / pintor (listados) ---------- */
+.entity-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+.entity-card {
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  cursor: pointer;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
+}
+.entity-card:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: var(--shadow); }
+.entity-card .cover { height: 150px; overflow: hidden; background: var(--bg-soft); }
+.entity-card .cover img { width: 100%; height: 100%; object-fit: cover; }
+.entity-card .card-top { display: flex; gap: 14px; align-items: stretch; padding: 16px 18px 8px; }
+.entity-card .avatar { flex: none; width: 52px; height: 52px; align-self: center; border-radius: 50%; object-fit: cover; }
+.entity-card .card-id { flex: 1; min-width: 0; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 6px; }
+.entity-card .name { font-family: var(--font-serif); font-size: 18.5px; margin: 0 0 3px; line-height: 1.25; }
+.entity-card .meta-line { display: flex; flex-wrap: wrap; gap: 6px; align-items: baseline; padding: 0 18px 12px; }
+.entity-card .meta-line .meta-inline { font-size: 12px; color: var(--text-faint); line-height: 1.4; }
+.entity-card .meta { font-size: 12px; color: var(--text-faint); }
+.entity-card .chips { margin-top: 8px; }
+.entity-card .pairs { padding: 10px 12px 14px; border-top: 1px solid var(--border-soft); }
+.entity-card .pairs + .pairs { padding-top: 12px; }
+.entity-card .pairs-title { font-size: 10.5px; color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.09em; margin: 0 0 6px; }
+.entity-card .pair-row { display: flex; align-items: center; gap: 10px; padding: 6px 8px; border-radius: 8px; color: var(--text); }
+.entity-card .pair-row:hover { background: var(--surface-2); color: var(--text); }
+.entity-card .pair-row .pthumb { flex: none; width: 44px; height: 34px; object-fit: cover; border-radius: 6px; background: var(--bg-soft); }
+.entity-card .pair-row .ptext { flex: 1; min-width: 0; }
+.entity-card .pair-row .pt-line { font-size: 12.5px; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.entity-card .pair-row .pp-line { font-size: 11.5px; color: var(--text-faint); font-style: italic; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.entity-card[data-href^="#/poeta/"] .pair-row .pp-line { font-style: normal; }
+.entity-card .pair-row .pval { flex: none; display: flex; align-items: center; gap: 8px; }
+.entity-card .pair-row .pval b { font-size: 12px; color: var(--accent); font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+/* ---------- Retrato y cabecera de ficha ---------- */
+.avatar {
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  display: block;
+}
+.avatar-lg { width: 72px; height: 72px; }
+.head-line { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 18px; }
+.head-line .page-title { margin-bottom: 10px; }
+
+/* ---------- Barra de filtros ---------- */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  padding: 14px 16px;
+  margin-bottom: 24px;
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+}
+.filter-bar .search {
+  position: relative;
+  flex: 1;
+  min-width: 220px;
+}
+.filter-bar .search input {
+  width: 100%;
+  padding: 9px 12px 9px 34px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--bg-soft);
+  color: var(--text);
+  font: inherit;
+}
+.filter-bar .search input:focus { outline: none; border-color: var(--accent); }
+.filter-bar .search .icon { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--text-faint); }
+.filter-bar .count { font-size: 12.5px; color: var(--text-faint); white-space: nowrap; }
+
+/* ---------- Vista detalle obra+poema ---------- */
+.detail {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  gap: 30px;
+  align-items: start;
+}
+.detail .art {
+  position: sticky;
+  top: calc(var(--header-h) + 20px);
+}
+.detail .art .painting {
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  background: var(--bg-soft);
+}
+.detail .art .painting img { width: 100%; height: auto; }
+.detail .art .cap {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 12px;
+}
+.detail .art .cap .pname { font-family: var(--font-serif); font-size: 17px; }
+.detail .art .cap .wtitle { font-size: 13px; color: var(--text-dim); font-style: italic; }
+
+.gauge { margin: 18px 0 0; }
+.gauge .glabel { display: flex; align-items: baseline; gap: 12px; font-size: 12px; color: var(--text-faint); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.07em; }
+.gauge .glabel .glabel-text { flex: 1 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.gauge .glabel .gmetric { color: var(--accent); font-weight: 600; text-transform: none; letter-spacing: 0; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.gauge .glabel .gmetric small { font-weight: 400; color: var(--text-faint); font-size: 12px; }
+.gauge .gbar { height: 10px; border-radius: 999px; background: var(--bg-soft); overflow: hidden; border: 1px solid var(--border-soft); }
+.gauge .gfill { height: 100%; border-radius: 999px; transition: width 0.5s ease; }
+.gauge .gval { text-align: right; font-size: 15px; font-weight: 600; color: var(--accent); margin-top: 6px; font-variant-numeric: tabular-nums; }
+
+.detail .panel { min-width: 0; }
+.panel .poem-kicker { font-size: 12px; color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.1em; margin: 0 0 6px; }
+.panel .poem-title { font-family: var(--font-serif); font-size: 24px; margin: 0 0 2px; }
+.panel .poem-year { color: var(--text-dim); font-size: 13px; margin-bottom: 16px; }
+.panel .poem-text {
+  font-family: var(--font-serif);
+  font-size: 16px;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  color: #d8d2c4;
+  border-left: 2px solid var(--border);
+  padding-left: 18px;
+  margin: 0;
+}
+
+.poem-switch { margin-top: 22px; }
+.poem-switch .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px; }
+.poem-switch .opts { display: flex; flex-wrap: wrap; gap: 8px; }
+.poem-switch .opt {
+  font-size: 12.5px;
+  padding: 5px 11px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--bg-soft);
+  color: var(--text-dim);
+  cursor: pointer;
+  transition: all 0.15s;
+  max-width: 100%;
+}
+.poem-switch .opt:hover { color: var(--text); border-color: var(--text-dim); }
+.poem-switch .opt.active { color: var(--accent); border-color: var(--accent); background: var(--accent-soft); }
+.poem-switch .opt small { color: var(--text-faint); }
+
+.detail-nav { display: flex; justify-content: space-between; gap: 12px; margin-top: 26px; }
+.detail-nav a {
+  padding: 9px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  font-size: 13.5px;
+  transition: all 0.15s;
+}
+.detail-nav a:hover { color: var(--accent); border-color: var(--accent); background: var(--accent-soft); }
+.detail-nav a.disabled { opacity: 0.35; pointer-events: none; }
+
+/* ---------- Lista de afinidades (poema) ---------- */
+.aff-list { display: flex; flex-direction: column; gap: 10px; }
+.aff-row {
+  display: grid;
+  grid-template-columns: 74px 1fr auto;
+  gap: 14px;
+  align-items: center;
+  padding: 10px 14px;
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+.aff-row:hover { border-color: var(--accent); }
+.aff-row .thumb { width: 74px; height: 56px; object-fit: cover; border-radius: 6px; background: var(--bg-soft); }
+.aff-row .t { min-width: 0; }
+.aff-row .t .pn { font-family: var(--font-serif); font-size: 15px; }
+.aff-row .t .pm { font-size: 12px; color: var(--text-faint); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.aff-row .v { display: flex; align-items: center; gap: 10px; }
+.aff-row .v .val { font-size: 14px; font-weight: 600; color: var(--accent); font-variant-numeric: tabular-nums; min-width: 52px; text-align: right; }
+
+/* ---------- Resultados de búsqueda ---------- */
+.result-group { margin-bottom: 26px; }
+.result-group .ghead { font-family: var(--font-serif); font-size: 18px; margin: 0 0 10px; }
+.result-group .ghead small { color: var(--text-faint); font-family: var(--font-sans); font-size: 12.5px; font-weight: 400; }
+.poem-row {
+  display: block;
+  padding: 13px 16px;
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  margin-bottom: 10px;
+  color: var(--text);
+  transition: border-color 0.15s;
+}
+.poem-row:hover { border-color: var(--accent); color: var(--text); }
+.poem-row .pt { font-family: var(--font-serif); font-size: 16px; margin: 0 0 3px; }
+.poem-row .py { font-size: 12px; color: var(--text-faint); margin-bottom: 6px; }
+.poem-row .snip { font-size: 13.5px; color: var(--text-dim); line-height: 1.5; }
+.poem-row .snip mark { background: var(--accent-soft); color: var(--accent); border-radius: 3px; padding: 0 2px; }
+
+/* ---------- Pestañas ---------- */
+.tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--border-soft); margin-bottom: 20px; }
+.tab {
+  appearance: none; border: 0; background: transparent;
+  color: var(--text-dim); font: inherit; font-size: 14px;
+  padding: 10px 16px; border-bottom: 2px solid transparent;
+  cursor: pointer; transition: color 0.15s;
+}
+.tab:hover { color: var(--text); }
+.tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+/* ---------- Barra auxiliar y conmutador de vista ---------- */
+.subbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 18px; }
+.subbar .count { font-size: 12.5px; color: var(--text-faint); }
+.viewtoggle { display: inline-flex; border: 1px solid var(--border); border-radius: 999px; overflow: hidden; background: var(--bg-soft); }
+.viewtoggle button { appearance: none; border: 0; background: transparent; color: var(--text-dim); font: inherit; font-size: 12.5px; padding: 6px 13px; cursor: pointer; transition: background 0.15s, color 0.15s; }
+.viewtoggle button + button { border-left: 1px solid var(--border); }
+.viewtoggle button.active { background: var(--accent-soft); color: var(--accent); }
+
+/* ---------- Indicador de fuerza (barra sutil bicolor) ---------- */
+.strength { display: inline-flex; align-items: center; width: 62px; height: 12px; flex: none; }
+.s-track { position: relative; width: 100%; height: 5px; border-radius: 999px; background: var(--bg-soft); border: 1px solid var(--border-soft); overflow: hidden; }
+.s-fill { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 999px; opacity: 0.9; }
+.lvl { font-size: 10.5px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 2px 8px; border-radius: 999px; border: 1px solid; white-space: nowrap; }
+.lvl-baja { color: #6b9bb8; border-color: #35506e; background: rgba(107, 155, 184, 0.08); }
+.lvl-media { color: #c9b26a; border-color: #8a7440; background: rgba(201, 178, 106, 0.08); }
+.lvl-alta { color: #d9a95f; border-color: #a57a33; background: rgba(217, 169, 95, 0.08); }
+.lvl-muy { color: #f2cf8f; border-color: #c99c4a; background: rgba(242, 207, 143, 0.08); }
+
+/* ---------- Fichas de poema (cuadradas) ---------- */
+.poem-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 18px; }
+.poem-card {
+  background: var(--surface); border: 1px solid var(--border-soft);
+  border-radius: var(--radius); overflow: hidden; cursor: pointer;
+  display: flex; flex-direction: column;
+  transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
+}
+.poem-card:hover { border-color: var(--accent); transform: translateY(-3px); box-shadow: var(--shadow); }
+.poem-card .frame { aspect-ratio: 4 / 3; background: var(--bg-soft); overflow: hidden; }
+.poem-card .frame img { width: 100%; height: 100%; object-fit: cover; }
+.poem-card .body { padding: 12px 14px 13px; display: flex; flex-direction: column; gap: 5px; flex: 1; }
+.poem-card .pt { font-family: var(--font-serif); font-size: 15.5px; line-height: 1.3; margin: 0; }
+.poem-card .meta { font-size: 11.5px; color: var(--text-faint); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.poem-card .frag { font-size: 12.5px; color: var(--text-dim); line-height: 1.45; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.poem-card .foot { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: auto; padding-top: 8px; }
+.poem-card .foot .sim { font-size: 13px; font-weight: 600; color: var(--accent); font-variant-numeric: tabular-nums; }
+
+/* ---------- Filas anchas (lista horizontal) ---------- */
+.poem-list { display: flex; flex-direction: column; gap: 12px; }
+.pair-card {
+  display: flex; gap: 16px; align-items: center; padding: 12px;
+  background: var(--surface); border: 1px solid var(--border-soft);
+  border-radius: var(--radius); cursor: pointer;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.pair-card:hover { border-color: var(--accent); box-shadow: var(--shadow); }
+.pair-card .thumb { flex: none; width: 150px; height: 96px; object-fit: cover; border-radius: var(--radius-sm); background: var(--bg-soft); }
+.pair-card .body { flex: 1; min-width: 0; }
+.pair-card .t1 { font-family: var(--font-serif); font-size: 16.5px; line-height: 1.3; display: block; }
+.pair-card .t2 { font-size: 12.5px; color: var(--text-dim); display: block; margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pair-card .frag { font-size: 13px; color: var(--text-faint); line-height: 1.45; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; margin-top: 6px; }
+.pair-card .side { flex: none; display: flex; flex-direction: column; align-items: flex-end; gap: 8px; }
+.pair-card .side .sim { font-size: 15px; font-weight: 600; color: var(--accent); font-variant-numeric: tabular-nums; }
+
+/* ---------- Obra destacada (página de poema) ---------- */
+.hero-art {
+  display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 20px;
+  align-items: center; padding: 16px; margin-bottom: 30px;
+  background: var(--surface); border: 1px solid var(--border-soft);
+  border-radius: var(--radius); color: var(--text); cursor: pointer;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.hero-art:hover { border-color: var(--accent); box-shadow: var(--shadow); color: var(--text); }
+.hero-art .frame { border-radius: var(--radius-sm); overflow: hidden; background: var(--bg-soft); }
+.hero-art .frame img { width: 100%; max-height: 330px; object-fit: contain; }
+.hero-art .info { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.hero-art .kicker { font-size: 10.5px; color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.1em; }
+.hero-art .wtitle { font-family: var(--font-serif); font-size: 23px; line-height: 1.2; }
+.hero-art .pname { font-size: 13px; color: var(--text-dim); }
+.hero-art .hero-metric { display: flex; align-items: center; gap: 12px; margin-top: 10px; flex-wrap: wrap; }
+.hero-art .hero-metric b { font-size: 22px; font-weight: 600; color: var(--accent); font-variant-numeric: tabular-nums; }
+
+/* Obra destacada (estilo página de pintura: escenario + pie + medidor) */
+.hero-stage { display: block; margin-bottom: 34px; color: inherit; border-radius: var(--radius); transition: box-shadow 0.15s; }
+.hero-stage:hover { box-shadow: var(--shadow); color: inherit; }
+.hero-stage .painting-stage { margin-bottom: 12px; }
+.hero-stage .gauge { margin-top: 0; }
+
+/* Autor en línea con el título del poema (misma línea, distinción tipográfica) */
+.pair-card .t1 .poem-by, .poem-card .pt .poem-by {
+  font-family: var(--font-serif); font-size: 0.78em; font-weight: 400; font-style: italic;
+  color: var(--text-faint); white-space: nowrap;
+}
+.pair-card .t1 .poem-by::before, .poem-card .pt .poem-by::before { content: " · "; color: var(--text-faint); }
+
+/* ---------- Escenario obra (página de pintura) ---------- */
+.painting-stage { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow); background: var(--bg-soft); margin-bottom: 14px; }
+.painting-stage img { width: 100%; max-height: 72vh; object-fit: contain; }
+.cap { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
+.cap .pname { font-family: var(--font-serif); font-size: 17px; }
+.cap .wtitle { font-size: 13px; color: var(--text-dim); font-style: italic; }
+
+/* ---------- Navegación entre pinturas ---------- */
+.painting-nav { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 32px; }
+.painting-nav a {
+  display: flex; align-items: center; gap: 12px; padding: 10px 12px;
+  border: 1px solid var(--border); border-radius: var(--radius);
+  color: var(--text); transition: border-color 0.15s, background 0.15s; min-width: 0;
+}
+.painting-nav a:hover { border-color: var(--accent); background: var(--accent-soft); color: var(--text); }
+.painting-nav a.next { flex-direction: row-reverse; text-align: right; }
+.painting-nav a img { flex: none; width: 64px; height: 48px; object-fit: cover; border-radius: 6px; background: var(--bg-soft); }
+.painting-nav a .dir { display: block; font-size: 10.5px; color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.08em; }
+.painting-nav a .t { display: block; font-family: var(--font-serif); font-size: 14px; line-height: 1.25; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.painting-nav a.disabled { opacity: 0.35; pointer-events: none; }
+
+/* ---------- Navegación entre poemas ---------- */
+.poem-nav { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 30px 0 0; }
+.poem-nav a {
+  display: flex; align-items: center; gap: 12px; padding: 10px 14px;
+  border: 1px solid var(--border); border-radius: var(--radius);
+  color: var(--text); transition: border-color 0.15s, background 0.15s; min-width: 0;
+}
+.poem-nav a:hover { border-color: var(--accent); background: var(--accent-soft); color: var(--text); }
+.poem-nav a.next { flex-direction: row-reverse; text-align: right; }
+.poem-nav a img { flex: none; width: 64px; height: 48px; object-fit: cover; border-radius: 6px; background: var(--bg-soft); }
+.poem-nav a .dir { display: block; font-size: 10.5px; color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.08em; }
+.poem-nav a .t { display: block; font-family: var(--font-serif); font-size: 14px; line-height: 1.3; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-top: 2px; }
+.poem-nav a.disabled { opacity: 0.35; pointer-events: none; }
+
+/* ---------- Estados ---------- */
+.empty {
+  padding: 50px 20px;
+  text-align: center;
+  color: var(--text-faint);
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+}
+.empty .big { font-size: 30px; margin-bottom: 8px; }
+
+.loading {
+  padding: 80px 20px;
+  text-align: center;
+  color: var(--text-faint);
+}
+.loading .spinner {
+  display: inline-block;
+  width: 34px;
+  height: 34px;
+  border: 3px solid var(--border);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.9s linear infinite;
+  margin-bottom: 18px;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+.loading .l-title { margin: 0 0 6px; font-family: var(--font-serif); font-size: 18px; color: var(--text); }
+.loading .l-sub { margin: 0; font-size: 13px; color: var(--text-faint); }
+
+.backlink { display: inline-flex; align-items: center; gap: 6px; margin-bottom: 14px; font-size: 13.5px; color: var(--text-dim); }
+.backlink:hover { color: var(--accent); }
+.backlink .arr { color: var(--accent); }
+
+/* ---------- Pie ---------- */
+.site-footer {
+  border-top: 1px solid var(--border-soft);
+  padding: 18px 22px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  color: var(--text-faint);
+  font-size: 12.5px;
+}
+.footer-meta { font-variant-numeric: tabular-nums; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .detail { grid-template-columns: 1fr; }
+  .detail .art { position: static; }
+  .hero-art { grid-template-columns: 1fr; }
+}
+@media (max-width: 700px) {
+  .site-header { height: auto; flex-wrap: wrap; padding: 12px 16px; gap: 10px; }
+  .brand { flex-basis: 100%; }
+  .header-actions { width: 100%; flex-wrap: wrap; justify-content: space-between; }
+  .global-search { max-width: none; order: 1; flex-basis: 100%; }
+  .main-nav { order: 2; width: 100%; gap: 8px; }
+  .main-nav a { flex: 1; text-align: center; white-space: nowrap; }
+  .container { padding: 24px 16px 48px; }
+  .rank-card { grid-template-columns: 68px 1fr; }
+  .rank-card .thumb { width: 68px; height: 56px; }
+  .rank-card .score { grid-column: 1 / -1; flex-direction: row; align-items: center; justify-content: space-between; min-width: 0; }
+  .aff-row { grid-template-columns: 56px 1fr; }
+  .aff-row .thumb { width: 56px; height: 44px; }
+  .aff-row .v { grid-column: 1 / -1; }
+  .pair-card { flex-wrap: wrap; }
+  .pair-card .thumb { width: 100%; height: 160px; }
+  .pair-card .side { flex-direction: row; align-items: center; width: 100%; justify-content: space-between; }
+  .painting-nav { grid-template-columns: 1fr; }
+  .poem-nav { grid-template-columns: 1fr; }
+  .head-line { flex-wrap: wrap; }
+  .tabs { overflow-x: auto; }
+}
