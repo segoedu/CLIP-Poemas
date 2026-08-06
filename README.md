@@ -80,6 +80,8 @@ CLIP-Poemas/
 
 ## 🚀 Puesta en marcha
 
+> 🌐 **En línea**: la aplicación está desplegada en **https://clip-poemas.vercel.app** (auto-deploy desde GitHub con cada `git push`).
+
 ### 1) Servir la web
 
 ```bash
