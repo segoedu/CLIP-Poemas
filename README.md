@@ -12,6 +12,8 @@ Una aplicación web *single-page* (SPA) sin dependencias que permite descubrir, 
 
 Partiendo de los vectores calculados con **Jina-CLIP v2** (un modelo capaz de incrustar en un mismo espacio textos e imágenes), el proyecto cruza **fragmentos de poemas** con **obras pictóricas** y cuantifica su semejanza mediante **similitud de coseno** 🌉.
 
+🌐 Una demo online se puede ver en [vercel](https://clip-poemas.vercel.app/)
+
 La web permite:
 
 - 🪶 **Explorar poetas**: perfil, época, región y sus afinidades con los pintores del corpus.
