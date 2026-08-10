@@ -7,6 +7,17 @@
   <base href="/web/">
   <title>Poemas &amp; Pinturas · Afinidades</title>
   <link rel="stylesheet" href="styles.css">
+  <script>
+    (function () {
+      try {
+        var v = JSON.parse(localStorage.getItem("pp_theme"));
+        if (v === "light" || v === "dark") { document.documentElement.dataset.theme = v; return; }
+      } catch (e) {}
+      if (window.matchMedia && matchMedia("(prefers-color-scheme: light)").matches) {
+        document.documentElement.dataset.theme = "light";
+      }
+    })();
+  </script>
 </head>
 <body>
   <header class="site-header">
@@ -23,6 +34,7 @@
         <input id="global-search-input" type="search" placeholder="Buscar en poemas…" autocomplete="off" aria-label="Buscar en poemas">
         <button type="button" id="global-search-clear" class="clear-search" aria-label="Limpiar búsqueda" hidden>&#10005;</button>
       </form>
+      <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">&#9728;</button>
       <nav class="main-nav" aria-label="Navegación principal">
         <a href="#/poetas" data-nav="poetas">🪶 Poetas</a>
         <a href="#/pintores" data-nav="pintores">🎨 Pintores</a>

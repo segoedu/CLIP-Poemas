@@ -137,8 +137,9 @@ function gpos(sim) {
 /* Color continuo sobre la rampa azul→naranja según la posición p (0–100) */
 function rampColor(p) {
   const t = Math.max(0, Math.min(100, p)) / 100;
-  const lo = [91, 131, 166];
-  const hi = [209, 160, 78];
+  const light = document.documentElement.dataset.theme === "light";
+  const lo = light ? [63, 103, 140] : [91, 131, 166];
+  const hi = light ? [168, 122, 51] : [209, 160, 78];
   const c = lo.map((v, i) => Math.round(v + (hi[i] - v) * t));
   return "rgb(" + c.join(",") + ")";
 }
@@ -265,6 +266,7 @@ function painterTopPairs(pintorDir, limit) {
 
 /* ---------------------- Estado persistente ---------------------- */
 const LS = {
+  theme: "pp_theme",
   mode: "pp_mode",
   n: "pp_topn",
   filters: "pp_filters",
@@ -290,6 +292,33 @@ let orderMode = loadLS(LS.mode, "best");
 let orderN = loadLS(LS.n, 10);
 let filters = loadLS(LS.filters, { q: "", gender: "", region: "", period: "" });
 let pfilters = loadLS(LS.pfilters, { q: "", gender: "", region: "", period: "" });
+
+/* ---------------------- Tema claro / oscuro ---------------------- */
+function applyTheme(theme) {
+  document.documentElement.dataset.theme = theme;
+  const btn = $("#theme-toggle");
+  if (!btn) return;
+  const next = theme === "light" ? "dark" : "light";
+  btn.textContent = theme === "light" ? "\u263e" : "\u2600";
+  btn.setAttribute("aria-label", next === "light" ? "Cambiar a modo claro" : "Cambiar a modo oscuro");
+  btn.title = next === "light" ? "Cambiar a modo claro" : "Cambiar a modo oscuro";
+}
+
+function initTheme() {
+  let t = loadLS(LS.theme, null);
+  if (t !== "light" && t !== "dark") {
+    t = window.matchMedia && matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+  }
+  applyTheme(t);
+  const btn = $("#theme-toggle");
+  if (btn) {
+    btn.addEventListener("click", () => {
+      const next = document.documentElement.dataset.theme === "light" ? "dark" : "light";
+      saveLS(LS.theme, next);
+      applyTheme(next);
+    });
+  }
+}
 
 /* ---------------------- Router ---------------------- */
 function parseHash() {
@@ -1788,6 +1817,7 @@ function bindCards() {
 
 /* ---------------------- Arranque ---------------------- */
 function boot() {
+  initTheme();
   $("#footer-meta").textContent =
     HOME.meta.afinidades + " afinidades · " + pintores.length + " pintores · " + poetas.length + " poetas";
   const ginput = $("#global-search-input");
