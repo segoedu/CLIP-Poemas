@@ -27,15 +27,30 @@ const Q1 = SIM_STATS.q1;
 const Q2 = SIM_STATS.q2;
 const Q3 = SIM_STATS.q3;
 
-/* Retrato provisional idéntico para todos (sin asignar) */
-const AVATAR =
-  "data:image/svg+xml;utf8," +
-  encodeURIComponent(
-    '<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#26374a"/><stop offset="1" stop-color="#171e27"/></linearGradient></defs><rect width="96" height="96" fill="url(#g)"/><circle cx="48" cy="37" r="17" fill="#3a4f66"/><path d="M13 88c4-16 18-24 35-24s31 8 35 24z" fill="#3a4f66"/></svg>'
-    );
+/* Retrato provisional idéntico para todos (sin asignar), adaptado al tema */
+function avatarSVG(theme) {
+  const light = theme === "light";
+  const grad1 = light ? "#e4ddd0" : "#26374a";
+  const grad2 = light ? "#cfc5b1" : "#171e27";
+  const figure = light ? "#b5a68f" : "#3a4f66";
+  return (
+    "data:image/svg+xml;utf8," +
+    encodeURIComponent(
+      '<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="' +
+        grad1 +
+        '"/><stop offset="1" stop-color="' +
+        grad2 +
+        '"/></linearGradient></defs><rect width="96" height="96" fill="url(#g)"/><circle cx="48" cy="37" r="17" fill="' +
+        figure +
+        '"/><path d="M13 88c4-16 18-24 35-24s31 8 35 24z" fill="' +
+        figure +
+        '"/></svg>'
+    )
+  );
+}
 
 function avatarSrc(poeta) {
-  return poeta.profile || AVATAR;
+  return poeta.profile || avatarSVG(document.documentElement.dataset.theme);
 }
 
 // Corpus completo de afinidades (carga perezosa con ensureFullData)
@@ -297,11 +312,17 @@ let pfilters = loadLS(LS.pfilters, { q: "", gender: "", region: "", period: "" }
 function applyTheme(theme) {
   document.documentElement.dataset.theme = theme;
   const btn = $("#theme-toggle");
-  if (!btn) return;
-  const next = theme === "light" ? "dark" : "light";
-  btn.textContent = theme === "light" ? "\u263e" : "\u2600";
-  btn.setAttribute("aria-label", next === "light" ? "Cambiar a modo claro" : "Cambiar a modo oscuro");
-  btn.title = next === "light" ? "Cambiar a modo claro" : "Cambiar a modo oscuro";
+  if (btn) {
+    const next = theme === "light" ? "dark" : "light";
+    btn.textContent = theme === "light" ? "\u263e" : "\u2600";
+    btn.setAttribute("aria-label", next === "light" ? "Cambiar a modo claro" : "Cambiar a modo oscuro");
+    btn.title = next === "light" ? "Cambiar a modo claro" : "Cambiar a modo oscuro";
+  }
+  document.querySelectorAll("img.avatar, img.avatar-lg").forEach((img) => {
+    if (img.getAttribute("src") && img.getAttribute("src").indexOf("data:image/svg+xml") === 0) {
+      img.src = avatarSVG(theme);
+    }
+  });
 }
 
 function initTheme() {
@@ -1150,7 +1171,7 @@ function renderPainter(dir, tab) {
     '<div class="container">' +
     backlinkHTML("#/pintores", "Todos los pintores") +
     '<div class="view-head"><div class="head-line"><img class="avatar avatar-lg" src="' +
-    AVATAR +
+    avatarSVG(document.documentElement.dataset.theme) +
     '" alt=""><div><h1 class="page-title">' +
     esc(pintor.name) +
     '</h1><span class="chips">' +
