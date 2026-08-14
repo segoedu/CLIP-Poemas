@@ -251,17 +251,40 @@ def build_home_dataset(dataset):
 
     sums = defaultdict(float)
     cnts = defaultdict(int)
+    poem_best = {}  # (poeta, pintor, poema) -> afinidad máxima (sentido poeta)
+    work_best = {}  # (poeta, pintor, obra) -> afinidad máxima (sentido pintor)
     for a in afinidades:
         key = (a["poeta"], a["pintor"])
         sums[key] += a["sim"]
         cnts[key] += 1
+        kp = (key[0], key[1], a["p"])
+        if a["sim"] > poem_best.get(kp, -1.0):
+            poem_best[kp] = a["sim"]
+        kw = (key[0], key[1], a["obra"])
+        if a["sim"] > work_best.get(kw, -1.0):
+            work_best[kw] = a["sim"]
 
-    best = {}
+    # Media "mejor caso" por pareja: por poema con su obra más afín (poeta) y
+    # por obra con su poema más afín (pintor).
+    best_poet_sum = defaultdict(float)
+    best_poet_cnt = defaultdict(int)
+    best_painter_sum = defaultdict(float)
+    best_painter_cnt = defaultdict(int)
+    for (poeta, pintor, _p), sim in poem_best.items():
+        key = (poeta, pintor)
+        best_poet_sum[key] += sim
+        best_poet_cnt[key] += 1
+    for (poeta, pintor, _o), sim in work_best.items():
+        key = (poeta, pintor)
+        best_painter_sum[key] += sim
+        best_painter_cnt[key] += 1
+
+    best_pairs = {}
     for a in afinidades:
         key = (a["poeta"], a["pintor"], a["obra"])
-        cur = best.get(key)
+        cur = best_pairs.get(key)
         if cur is None or a["sim"] > cur["sim"]:
-            best[key] = a
+            best_pairs[key] = a
 
     for poeta in poetas:
         rows = []
@@ -272,10 +295,13 @@ def build_home_dataset(dataset):
             value = sums[key] / cnts[key]
             if value <= 0:
                 continue
-            rows.append({"dir": pintor["dir"], "name": pintor["name"], "value": round(value, 6)})
-        rows.sort(key=lambda r: r["value"], reverse=True)
+            best_poet = best_poet_sum[key] / best_poet_cnt[key] if best_poet_cnt[key] else 0
+            rows.append(
+                {"dir": pintor["dir"], "name": pintor["name"], "value": round(value, 6), "best": round(best_poet, 6)}
+            )
+        rows.sort(key=lambda r: r["best"], reverse=True)
         poeta["topPainters"] = rows[:3]
-        pp = [best[k] for k in best if k[0] == poeta["name"]]
+        pp = [best_pairs[k] for k in best_pairs if k[0] == poeta["name"]]
         pp.sort(key=lambda a: a["sim"], reverse=True)
         poeta["topPairs"] = pp[:3]
 
@@ -288,10 +314,11 @@ def build_home_dataset(dataset):
             value = sums[key] / cnts[key]
             if value <= 0:
                 continue
-            rows.append({"name": poeta["name"], "value": round(value, 6)})
-        rows.sort(key=lambda r: r["value"], reverse=True)
+            best_painter = best_painter_sum[key] / best_painter_cnt[key] if best_painter_cnt[key] else 0
+            rows.append({"name": poeta["name"], "value": round(value, 6), "best": round(best_painter, 6)})
+        rows.sort(key=lambda r: r["best"], reverse=True)
         pintor["topPoets"] = rows[:3]
-        pp = [best[k] for k in best if k[1] == pintor["dir"]]
+        pp = [best_pairs[k] for k in best_pairs if k[1] == pintor["dir"]]
         pp.sort(key=lambda a: a["sim"], reverse=True)
         pintor["topPairs"] = pp[:3]
 

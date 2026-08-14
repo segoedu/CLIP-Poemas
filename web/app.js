@@ -206,6 +206,8 @@ const MODES = {
   best: { label: "Mejor pareja", hint: "máx. poema×obra" },
   mean: { label: "Media", hint: "promedio poema×obra" },
   topn: { label: "Suma top-N", hint: "suma de las N mejores parejas" },
+  pmean: { label: "Media mejor obra", hint: "promedio de la obra más afín por poema" },
+  wmean: { label: "Media mejor poema", hint: "promedio del poema más afín por obra" },
 };
 const TOPN_OPTIONS = [3, 5, 10, 20, 50];
 
@@ -213,6 +215,17 @@ function metricValue(mode, pairs, n) {
   if (!pairs.length) return 0;
   if (mode === "best") return Math.max(...pairs.map((a) => a.sim));
   if (mode === "mean") return pairs.reduce((s, a) => s + a.sim, 0) / pairs.length;
+  if (mode === "pmean" || mode === "wmean") {
+    const by = new Map();
+    for (const a of pairs) {
+      const k = mode === "pmean" ? a.p : a.obra;
+      const cur = by.get(k);
+      if (!cur || a.sim > cur.sim) by.set(k, a);
+    }
+    let s = 0;
+    for (const a of by.values()) s += a.sim;
+    return s / by.size;
+  }
   const top = [...pairs].sort((x, y) => y.sim - x.sim).slice(0, n || 10);
   return top.reduce((s, a) => s + a.sim, 0);
 }
@@ -559,6 +572,7 @@ function renderPoets(caretPos) {
     .map((poeta) => {
       const meanRows = (poeta.topPainters || [])
         .map((r) => {
+          const v = r.best != null ? r.best : r.value;
           return (
             '<a class="pair-row" href="#/poeta/' +
             encodeURIComponent(poeta.name) +
@@ -567,9 +581,9 @@ function renderPoets(caretPos) {
             '"><span class="ptext"><span class="pt-line">' +
             esc(r.name) +
             '</span></span><span class="pval">' +
-            strengthHTML(r.value) +
+            strengthHTML(v) +
             "<b>" +
-            fmt(r.value) +
+            fmt(v) +
             "</b></span></a>"
           );
         })
@@ -592,7 +606,7 @@ function renderPoets(caretPos) {
         esc(poeta.region) +
         "</span></div>" +
         (meanRows
-          ? '<div class="pairs"><div class="pairs-title">Pintores afines · Media</div>' +
+          ? '<div class="pairs"><div class="pairs-title">Pintores afines · Media mejor obra</div>' +
             meanRows +
             "</div>"
           : "") +
@@ -681,6 +695,7 @@ function renderPoets(caretPos) {
 function pintorCard(pintor) {
   const meanRows = (pintor.topPoets || [])
     .map((r) => {
+      const v = r.best != null ? r.best : r.value;
       return (
         '<a class="pair-row" href="#/pintor/' +
         encodeURIComponent(pintor.dir) +
@@ -689,9 +704,9 @@ function pintorCard(pintor) {
         '"><span class="ptext"><span class="pt-line">' +
         esc(r.name) +
         '</span></span><span class="pval">' +
-        strengthHTML(r.value) +
+        strengthHTML(v) +
         "<b>" +
-        fmt(r.value) +
+        fmt(v) +
         "</b></span></a>"
       );
     })
@@ -736,7 +751,7 @@ function pintorCard(pintor) {
     esc(pintor.region) +
     "</span></div>" +
     (meanRows
-      ? '<div class="pairs"><div class="pairs-title">Poetas afines · media</div>' +
+      ? '<div class="pairs"><div class="pairs-title">Poetas afines · Media mejor poema</div>' +
         meanRows +
         "</div>"
       : "") +
@@ -1085,11 +1100,11 @@ function painterRankCard(r, i, maxV, poetaName, mode) {
 }
 
 function poetPintoresTab(poeta) {
-  const mode = effMode(["mean", "topn"]);
+  const mode = effMode(["pmean", "mean", "topn"]);
   const ranking = rankPainters(poeta.name, mode, orderN);
   const maxV = ranking.length ? ranking[0].value : 1;
   const cards = ranking.map((r, i) => painterRankCard(r, i, maxV, poeta.name, mode)).join("");
-  return metricToolbar("mt-poeta", ["mean", "topn"]) + '<div class="rank-list">' + cards + "</div>";
+  return metricToolbar("mt-poeta", ["pmean", "mean", "topn"]) + '<div class="rank-list">' + cards + "</div>";
 }
 
 /* ---------------------- Render: detalle de pintor ---------------------- */
@@ -1257,11 +1272,11 @@ function painterAsocTab(pintor) {
 }
 
 function painterPoetasTab(pintor) {
-  const mode = effMode(["mean", "topn"]);
+  const mode = effMode(["wmean", "mean", "topn"]);
   const ranking = rankPoets(pintor.dir, mode, orderN);
   const maxV = ranking.length ? ranking[0].value : 1;
   const cards = ranking.map((r, i) => poetRankCard(r, i, maxV, pintor.dir, mode)).join("");
-  return metricToolbar("mt-pintor", ["mean", "topn"]) + '<div class="rank-list">' + cards + "</div>";
+  return metricToolbar("mt-pintor", ["wmean", "mean", "topn"]) + '<div class="rank-list">' + cards + "</div>";
 }
 
 /* ---------------------- Galería (binomio poeta × pintor) ---------------------- */
