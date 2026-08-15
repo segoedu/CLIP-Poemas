@@ -188,6 +188,8 @@ img { max-width: 100%; display: block; }
 }
 .main-nav a:hover { color: var(--text); background: var(--surface-2); }
 .main-nav a.active { color: var(--accent); background: var(--accent-soft); }
+.main-nav a.nav-featured { color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent-soft); }
+.main-nav a.nav-featured:hover { background: var(--accent-soft); color: var(--accent); }
 
 .theme-toggle {
   appearance: none;
@@ -799,4 +801,307 @@ img { max-width: 100%; display: block; }
   .poem-nav { grid-template-columns: 1fr; }
   .head-line { flex-wrap: wrap; }
   .tabs { overflow-x: auto; }
+}
+
+/* ============================================================
+   Galería inmersiva (#/galeria)
+   Cuadro fijo a pantalla completa sobre su propio fondo desenfocado;
+   el poema sube por encima en una lámina de metacrilato ahumado.
+   Siempre en oscuro, también con el tema claro activo.
+   ============================================================ */
+body[data-immersive="1"] { overflow: hidden; }
+body[data-immersive="1"] .site-header,
+body[data-immersive="1"] .site-footer { display: none; }
+body[data-immersive="1"] .app { min-height: 0; }
+
+.imm {
+  --t: 0;               /* progreso del scroll: 0 = cuadro, 1 = poema arriba */
+  --fade: 520ms;
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  overflow: hidden;
+  background: #06080b;
+  color: #f3efe6;
+  font-family: var(--font-sans);
+  user-select: none;
+}
+.imm > * { position: absolute; inset: 0; }
+
+/* ---------- Fondo: el propio cuadro, ampliado y desenfocado ---------- */
+.imm-bg { z-index: 0; overflow: hidden; }
+.imm-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.18);
+  filter: blur(44px) saturate(1.55) brightness(0.46);
+  transition: opacity var(--fade) ease;
+}
+
+/* ---------- El cuadro, entero y centrado ---------- */
+.imm-art {
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  padding: 6vh 7vw 15vh;
+  transition: opacity var(--fade) ease;
+}
+.imm-art img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 3px;
+  box-shadow: 0 42px 100px rgba(0, 0, 0, 0.62), 0 0 0 1px rgba(255, 255, 255, 0.08);
+  animation: imm-breathe 30s ease-out both;
+}
+/* El cuadro se queda absolutamente quieto en cuanto empiezas a leer */
+.imm.is-reading .imm-art img { animation-play-state: paused; }
+@keyframes imm-breathe {
+  from { transform: scale(1); }
+  to { transform: scale(1.045); }
+}
+
+/* Oscurecido progresivo bajo el poema + viñeta para asentar el conjunto */
+.imm-scrim {
+  z-index: 2;
+  background: #04060a;
+  opacity: calc(var(--t) * 0.52);
+  pointer-events: none;
+}
+.imm-vig {
+  z-index: 3;
+  pointer-events: none;
+  background:
+    radial-gradient(125% 95% at 50% 42%, transparent 38%, rgba(0, 0, 0, 0.5) 100%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.5), transparent 20%, transparent 58%, rgba(0, 0, 0, 0.72));
+}
+
+/* ---------- Capa de scroll: la pista vacía y luego la lámina ---------- */
+.imm-scroll {
+  z-index: 4;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  scrollbar-width: none;
+}
+.imm-scroll::-webkit-scrollbar { width: 0; height: 0; }
+
+.imm-runway { height: 100vh; height: 100dvh; }
+
+.imm-sheet-wrap { display: flex; justify-content: center; padding: 0 max(14px, 3.5vw); }
+
+.imm-sheet {
+  width: min(880px, 100%);
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: 52px clamp(22px, 4.4vw, 62px) 110px;
+  border-radius: 20px 20px 0 0;
+  background: linear-gradient(180deg, rgba(15, 19, 25, 0.62), rgba(8, 10, 14, 0.88) 300px);
+  backdrop-filter: blur(26px) saturate(1.4);
+  -webkit-backdrop-filter: blur(26px) saturate(1.4);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 0;
+  box-shadow:
+    0 -36px 90px rgba(0, 0, 0, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.22);   /* el filo de luz del metacrilato */
+  transition: opacity var(--fade) ease;
+}
+
+.imm-sheet .kicker {
+  margin: 0 0 10px;
+  font-size: 11.5px;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+  color: rgba(243, 239, 230, 0.5);
+}
+.imm-sheet .imm-title {
+  margin: 0 0 6px;
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(27px, 3.5vw, 42px);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+.imm-sheet .imm-year {
+  margin: 0 0 26px;
+  font-size: 13px;
+  font-style: italic;
+  color: rgba(243, 239, 230, 0.45);
+}
+.imm-poem {
+  font-family: var(--font-serif);
+  font-size: clamp(16px, 1.25vw, 19px);
+  line-height: 1.92;
+  white-space: pre-wrap;
+  color: rgba(245, 241, 233, 0.93);
+  margin: 0;
+}
+
+/* Medidor de afinidad dentro de la lámina */
+.imm-aff {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 34px 0 0;
+  padding-top: 22px;
+  border-top: 1px solid rgba(255, 255, 255, 0.09);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(243, 239, 230, 0.5);
+}
+.imm-aff .bar {
+  flex: 1 1 auto;
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  overflow: hidden;
+}
+.imm-aff .bar i { display: block; height: 100%; border-radius: 999px; }
+.imm-aff .val {
+  font-variant-numeric: tabular-nums;
+  color: var(--accent);
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.imm-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+.imm-links a {
+  padding: 9px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(243, 239, 230, 0.82);
+  font-size: 13px;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+.imm-links a:hover { background: rgba(255, 255, 255, 0.11); border-color: var(--accent); color: #fff; }
+
+/* ---------- Interfaz flotante ---------- */
+.imm-ui { z-index: 5; pointer-events: none; }
+.imm-ui > * { pointer-events: auto; }
+/* La cartela y el contador no son interactivos: dejan pasar el gesto de scroll */
+.imm-foot, .imm-count { pointer-events: none; }
+
+.imm-btn {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(10, 13, 18, 0.42);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: rgba(243, 239, 230, 0.9);
+  font-size: 15px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, color 0.15s, opacity 0.2s;
+}
+.imm-btn:hover { background: rgba(20, 25, 32, 0.72); border-color: var(--accent); color: var(--accent); }
+
+.imm-exit { top: 20px; left: 20px; width: auto; padding: 0 16px; gap: 8px; grid-auto-flow: column; font-size: 13px; border-radius: 999px; }
+.imm-full { top: 20px; right: 20px; }
+.imm-play { top: 20px; right: 70px; }
+.imm-prev { top: 50%; left: 20px; margin-top: -21px; font-size: 20px; }
+.imm-next { top: 50%; right: 20px; margin-top: -21px; font-size: 20px; }
+.imm-prev, .imm-next { opacity: 0.55; }
+.imm-prev:hover, .imm-next:hover { opacity: 1; }
+
+/* Anillo de cuenta atrás alrededor del botón de pausa */
+.imm-ring { position: absolute; inset: -1px; width: calc(100% + 2px); height: calc(100% + 2px); transform: rotate(-90deg); }
+.imm-ring circle { fill: none; stroke-width: 2; }
+.imm-ring .rbg { stroke: rgba(255, 255, 255, 0.1); }
+.imm-ring .rfg {
+  stroke: var(--accent);
+  stroke-linecap: round;
+  stroke-dasharray: 97.39;               /* 2πr, r = 15.5 */
+  stroke-dashoffset: 97.39;
+  transition: stroke-dashoffset 0.14s linear;
+}
+.imm.is-paused .imm-ring .rfg { stroke: transparent; }
+
+/* Pie: cartela del cuadro, teaser del poeta e indicación de deslizar */
+.imm-foot {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 26px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  padding: 0 20px;
+  text-align: center;
+  opacity: calc(1 - var(--t) * 2.6);
+  transition: opacity 0.18s linear;
+}
+.imm-cap-work {
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(243, 239, 230, 0.62);
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.8);
+}
+.imm-cap-work b { color: rgba(243, 239, 230, 0.92); font-weight: 500; }
+.imm-cap-poet {
+  font-family: var(--font-serif);
+  font-size: clamp(15px, 1.6vw, 19px);
+  font-style: italic;
+  color: rgba(243, 239, 230, 0.82);
+  text-shadow: 0 1px 14px rgba(0, 0, 0, 0.85);
+}
+.imm-hint {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+  font-size: 11.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(243, 239, 230, 0.55);
+}
+.imm-hint .arrow { display: block; font-size: 15px; animation: imm-nudge 2.1s ease-in-out infinite; }
+@keyframes imm-nudge {
+  0%, 100% { transform: translateY(-3px); opacity: 0.5; }
+  50% { transform: translateY(3px); opacity: 1; }
+}
+
+.imm-count {
+  position: absolute;
+  right: 22px;
+  bottom: 24px;
+  font-size: 11.5px;
+  letter-spacing: 0.1em;
+  font-variant-numeric: tabular-nums;
+  color: rgba(243, 239, 230, 0.42);
+  opacity: calc(1 - var(--t) * 2.6);
+}
+
+/* ---------- Fundido entre piezas ---------- */
+.imm.is-fading .imm-bg img,
+.imm.is-fading .imm-art,
+.imm.is-fading .imm-sheet,
+.imm.is-fading .imm-foot { opacity: 0; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 700px) {
+  .imm-art { padding: 8vh 4vw 18vh; }
+  .imm-prev, .imm-next { display: none; }        /* en móvil se pasa deslizando */
+  .imm-sheet { padding: 40px 22px 90px; border-radius: 16px 16px 0 0; }
+  .imm-exit { top: 14px; left: 14px; }
+  .imm-full { top: 14px; right: 14px; }
+  .imm-play { top: 14px; right: 64px; }
+  .imm-count { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .imm-art img { animation: none; }
+  .imm-hint .arrow { animation: none; }
 }

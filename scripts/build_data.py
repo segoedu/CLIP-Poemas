@@ -11,7 +11,8 @@ Content-Encoding: gzip (ver serve.py):
   <prefijo>.js          -> dataset completo  (window.APP_DATA)
   <prefijo>_home.js     -> resúmenes de inicio (window.APP_DATA_HOME):
                            metadatos + poemas + top-3 pintores/poetas y
-                           parejas precalculadas + simStats.
+                           parejas precalculadas + simStats + la obra más
+                           afín de cada poema (para la galería inmersiva).
 
 Uso:
   python build_data.py [ruta_al_csv] [--out PREFIJO]
@@ -253,6 +254,7 @@ def build_home_dataset(dataset):
     cnts = defaultdict(int)
     poem_best = {}  # (poeta, pintor, poema) -> afinidad máxima (sentido poeta)
     work_best = {}  # (poeta, pintor, obra) -> afinidad máxima (sentido pintor)
+    best_of_poem = {}  # (poeta, poema) -> afinidad máxima entre todo el corpus
     for a in afinidades:
         key = (a["poeta"], a["pintor"])
         sums[key] += a["sim"]
@@ -263,6 +265,10 @@ def build_home_dataset(dataset):
         kw = (key[0], key[1], a["obra"])
         if a["sim"] > work_best.get(kw, -1.0):
             work_best[kw] = a["sim"]
+        kb = (a["poeta"], a["p"])
+        cur = best_of_poem.get(kb)
+        if cur is None or a["sim"] > cur["sim"]:
+            best_of_poem[kb] = a
 
     # Media "mejor caso" por pareja: por poema con su obra más afín (poeta) y
     # por obra con su poema más afín (pintor).
@@ -304,6 +310,14 @@ def build_home_dataset(dataset):
         pp = [best_pairs[k] for k in best_pairs if k[0] == poeta["name"]]
         pp.sort(key=lambda a: a["sim"], reverse=True)
         poeta["topPairs"] = pp[:3]
+
+        # Obra más afín de cada poema, alineada con el índice de poeta["poems"]:
+        # es lo que alimenta la galería inmersiva sin descargar el corpus completo.
+        best = []
+        for i in range(len(poeta["poems"])):
+            a = best_of_poem.get((poeta["name"], i))
+            best.append(None if a is None else {"pintor": a["pintor"], "obra": a["obra"], "sim": a["sim"]})
+        poeta["best"] = best
 
     for pintor in pintores:
         rows = []

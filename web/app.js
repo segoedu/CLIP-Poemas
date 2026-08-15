@@ -149,10 +149,11 @@ function gpos(sim) {
   return Math.max(1, Math.min(99, Math.round(((sim - MIN_SIM) / span) * 100)));
 }
 
-/* Color continuo sobre la rampa azul→naranja según la posición p (0–100) */
-function rampColor(p) {
+/* Color continuo sobre la rampa azul→naranja según la posición p (0–100).
+   forceDark ignora el tema claro (la galería inmersiva siempre va en oscuro). */
+function rampColor(p, forceDark) {
   const t = Math.max(0, Math.min(100, p)) / 100;
-  const light = document.documentElement.dataset.theme === "light";
+  const light = !forceDark && document.documentElement.dataset.theme === "light";
   const lo = light ? [63, 103, 140] : [91, 131, 166];
   const hi = light ? [168, 122, 51] : [209, 160, 78];
   const c = lo.map((v, i) => Math.round(v + (hi[i] - v) * t));
@@ -424,20 +425,38 @@ function renderLoadError(err) {
 
 const NEEDS_FULL = { poeta: true, pintor: true, obra: true, poema: true, poemas: true };
 
+/* La galería solo necesita el corpus completo si el bundle de inicio todavía no
+   trae precalculada la obra más afín de cada poema (data_home.js antiguo). */
+function needsFullData(root) {
+  if (NEEDS_FULL[root]) return true;
+  return root === "galeria" && !poetas.some((p) => p.best);
+}
+
+/* Vista activa que debe deshacer efectos globales al salir (galería inmersiva) */
+let viewCleanup = null;
+/* Última ruta no inmersiva, para saber a dónde vuelve el botón "Salir" */
+let previousHash = "";
+
 function render() {
+  if (viewCleanup) {
+    const undo = viewCleanup;
+    viewCleanup = null;
+    undo();
+  }
   const parts = parseHash();
   const root = parts[0] || "poetas";
 
-  const nav = { poetas: false, pintores: false, poemas: false };
+  const nav = { poetas: false, pintores: false, poemas: false, galeria: false };
   if (root === "poetas" || root === "poeta") nav.poetas = true;
   if (root === "pintores" || root === "pintor") nav.pintores = true;
   if (root === "poemas") nav.poemas = true;
+  if (root === "galeria") nav.galeria = true;
   document.querySelectorAll(".main-nav a").forEach((a) => {
     a.classList.toggle("active", nav[a.dataset.nav]);
   });
 
   const fn = ROUTES[root] || renderNotFound;
-  if (NEEDS_FULL[root] && !DATA) {
+  if (needsFullData(root) && !DATA) {
     showLoading();
     ensureFullData()
       .then(() => fn(parts))
@@ -459,9 +478,14 @@ const ROUTES = {
   obra: route(renderObraRoute),
   poema: route(renderPoemaRoute),
   buscar: route(renderBuscarRoute),
+  galeria: route(renderGaleria),
 };
 
-window.addEventListener("hashchange", render);
+window.addEventListener("hashchange", (e) => {
+  const old = e.oldURL && e.oldURL.indexOf("#") >= 0 ? e.oldURL.slice(e.oldURL.indexOf("#")) : "";
+  if (old.indexOf("#/galeria") !== 0) previousHash = old;
+  render();
+});
 
 /* ---------------------- Tarjetas reutilizables ---------------------- */
 function poemCardHTML(o) {
@@ -1831,6 +1855,361 @@ function highlight(text, q) {
   const escQ = esc(q);
   const re = new RegExp(escQ.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "ig");
   return text.replace(re, (m) => "<mark>" + m + "</mark>");
+}
+
+/* ============================================================
+   Galería inmersiva · #/galeria (o #/galeria/<poeta>/<p>)
+
+   El cuadro ocupa la pantalla sobre su propio fondo desenfocado y no se
+   mueve: al deslizar, el poema sube por encima en una lámina de metacrilato
+   ahumado. Sin tocar nada, pasa sola a la pieza siguiente.
+   ============================================================ */
+const GAL_IDLE_ART = 10000; // inactividad contemplando el cuadro
+const GAL_IDLE_READ = 20000; // inactividad con el poema abierto
+const GAL_FADE = 520; // debe coincidir con --fade en styles.css
+const GAL_RING = 97.39; // 2πr del anillo de cuenta atrás (r = 15.5)
+
+function shuffled(list) {
+  const a = list.slice();
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    const t = a[i];
+    a[i] = a[j];
+    a[j] = t;
+  }
+  return a;
+}
+
+/* Baraja de piezas {poeta, p, pintor, obra, sim}: cada poema junto a la obra
+   que mejor lo representa. Sale del índice precalculado del bundle de inicio
+   y, si ese bundle es antiguo, del corpus completo ya cargado. */
+function galleryDeck() {
+  const out = [];
+  for (const poeta of poetas) {
+    if (!poeta.best) continue;
+    for (let i = 0; i < poeta.best.length; i++) {
+      const b = poeta.best[i];
+      if (b) out.push({ poeta: poeta.name, p: i, pintor: b.pintor, obra: b.obra, sim: b.sim });
+    }
+  }
+  if (out.length || !DATA) return out;
+  for (const a of poemBest.values()) {
+    out.push({ poeta: a.poeta, p: a.p, pintor: a.pintor, obra: a.obra, sim: a.sim });
+  }
+  return out;
+}
+
+function galleryHTML() {
+  return (
+    '<div class="imm" id="imm" style="--t:0">' +
+    '<div class="imm-bg"><img id="imm-bg-img" alt="" aria-hidden="true"></div>' +
+    '<div class="imm-art"><img id="imm-art-img" alt=""></div>' +
+    '<div class="imm-scrim"></div>' +
+    '<div class="imm-vig"></div>' +
+    '<div class="imm-scroll" id="imm-scroll">' +
+    '<div class="imm-runway"></div>' +
+    '<div class="imm-sheet-wrap"><article class="imm-sheet" id="imm-sheet"></article></div>' +
+    "</div>" +
+    '<div class="imm-ui">' +
+    '<button type="button" class="imm-btn imm-exit" id="imm-exit"><span>&#8592;</span> Salir</button>' +
+    '<button type="button" class="imm-btn imm-play" id="imm-play" title="Pausar el pase automático (P)" aria-label="Pausar el pase automático">' +
+    '<svg class="imm-ring" viewBox="0 0 36 36" aria-hidden="true">' +
+    '<circle class="rbg" cx="18" cy="18" r="15.5"></circle>' +
+    '<circle class="rfg" id="imm-ring" cx="18" cy="18" r="15.5"></circle></svg>' +
+    '<span id="imm-play-icon">&#10073;&#10073;</span></button>' +
+    '<button type="button" class="imm-btn imm-full" id="imm-full" title="Pantalla completa (F)" aria-label="Pantalla completa">&#9974;</button>' +
+    '<button type="button" class="imm-btn imm-prev" id="imm-prev" title="Anterior (←)" aria-label="Pieza anterior">&#8249;</button>' +
+    '<button type="button" class="imm-btn imm-next" id="imm-next" title="Siguiente (→)" aria-label="Pieza siguiente">&#8250;</button>' +
+    '<div class="imm-foot" id="imm-foot">' +
+    '<div class="imm-cap-work" id="imm-cap-work"></div>' +
+    '<div class="imm-cap-poet" id="imm-cap-poet"></div>' +
+    '<div class="imm-hint"><span class="arrow">&#8964;</span> Desliza para leer el poema</div>' +
+    "</div>" +
+    '<div class="imm-count" id="imm-count"></div>' +
+    "</div></div>"
+  );
+}
+
+function renderGaleria(parts) {
+  const app = $("#app");
+  const deck = shuffled(galleryDeck());
+  if (!deck.length) {
+    app.innerHTML =
+      '<div class="container"><div class="empty"><div class="big">&#9672;</div>' +
+      "Todavía no hay parejas poema&#8596;obra que mostrar en la galería.</div></div>";
+    return;
+  }
+
+  // Enlace directo a una pieza concreta: #/galeria/<poeta>/<p>
+  if (parts[1]) {
+    const target = parseInt(parts[2], 10);
+    const at = deck.findIndex((it) => it.poeta === parts[1] && (isNaN(target) || it.p === target));
+    if (at > 0) deck.unshift(deck.splice(at, 1)[0]);
+  }
+
+  document.body.dataset.immersive = "1";
+  app.innerHTML = galleryHTML();
+
+  const root = $("#imm");
+  const scroller = $("#imm-scroll");
+  const artImg = $("#imm-art-img");
+  const bgImg = $("#imm-bg-img");
+  const sheet = $("#imm-sheet");
+  const capWork = $("#imm-cap-work");
+  const capPoet = $("#imm-cap-poet");
+  const counter = $("#imm-count");
+  const ring = $("#imm-ring");
+  const playBtn = $("#imm-play");
+  const playIcon = $("#imm-play-icon");
+
+  let idx = 0;
+  let paused = false;
+  let busy = false;
+  let lastAct = Date.now();
+  let ringAt = -1;
+  let rafPending = false;
+  const timers = [];
+  const off = [];
+  const later = (fn, ms) => timers.push(setTimeout(fn, ms));
+  const on = (target, ev, fn, opts) => {
+    target.addEventListener(ev, fn, opts);
+    off.push(() => target.removeEventListener(ev, fn, opts));
+  };
+  const activity = () => {
+    lastAct = Date.now();
+  };
+
+  /* ---- Pintar una pieza ---- */
+  function paint(item) {
+    const poeta = poetaByName.get(item.poeta);
+    const pintor = pintorByDir.get(item.pintor);
+    const pm = poeta && poeta.poems[item.p];
+    if (!pm) return;
+
+    const src = imgSrc(item.pintor, item.obra);
+    const painterName = pintor ? pintor.name : item.pintor;
+    artImg.src = src;
+    artImg.alt = humanize(item.obra) + " · " + painterName;
+    bgImg.src = src;
+
+    capWork.innerHTML = "<b>" + esc(painterName) + "</b> · " + esc(humanize(item.obra));
+    capPoet.textContent = "un poema de " + poeta.name;
+    counter.textContent = idx + 1 + " / " + deck.length;
+
+    const g = gpos(item.sim);
+    sheet.innerHTML =
+      '<p class="kicker">' +
+      esc(poeta.name) +
+      '</p><h2 class="imm-title">' +
+      esc(pm.title) +
+      '</h2><p class="imm-year">' +
+      (pm.year ? esc(pm.year) : "") +
+      '</p><div class="imm-poem">' +
+      esc(pm.text) +
+      '</div><div class="imm-aff"><span>Afinidad ' +
+      esc(simLevel(item.sim).n) +
+      '</span><span class="bar"><i style="width:' +
+      g +
+      "%;background:" +
+      rampColor(g, true) +
+      '"></i></span><span class="val">' +
+      fmt(item.sim) +
+      '</span></div><div class="imm-links">' +
+      '<a href="' +
+      poemHref(item.poeta, item.p) +
+      '">Ficha del poema &#8594;</a>' +
+      '<a href="' +
+      obraHref(item.pintor, item.obra, item.poeta, item.p) +
+      '">Ver la obra &#8594;</a>' +
+      '<a href="#/poeta/' +
+      encodeURIComponent(item.poeta) +
+      '">Más de ' +
+      esc(poeta.name) +
+      " &#8594;</a></div>";
+  }
+
+  function preload(item) {
+    if (!item) return;
+    const im = new Image();
+    im.src = imgSrc(item.pintor, item.obra);
+  }
+
+  function toTop() {
+    scroller.scrollTop = 0;
+    root.style.setProperty("--t", "0");
+    root.classList.remove("is-reading");
+  }
+
+  function restartBreathe() {
+    artImg.style.animation = "none";
+    void artImg.offsetWidth;
+    artImg.style.animation = "";
+  }
+
+  /* ---- Cambio de pieza: si el poema está abierto, primero baja la lámina ---- */
+  function go(delta) {
+    if (busy) return;
+    busy = true;
+    const swap = () => {
+      root.classList.add("is-fading");
+      later(() => {
+        idx = (((idx + delta) % deck.length) + deck.length) % deck.length;
+        toTop();
+        paint(deck[idx]);
+        preload(deck[(idx + 1) % deck.length]);
+        requestAnimationFrame(() => {
+          root.classList.remove("is-fading");
+          restartBreathe();
+        });
+        activity();
+        busy = false;
+      }, GAL_FADE);
+    };
+    if (scroller.scrollTop > 8) {
+      scroller.scrollTo({ top: 0, behavior: "smooth" });
+      later(swap, 520);
+    } else {
+      swap();
+    }
+  }
+
+  /* ---- Scroll: mueve el progreso --t que atenúa cuadro y cartela ---- */
+  function onScroll() {
+    activity();
+    if (rafPending) return;
+    rafPending = true;
+    requestAnimationFrame(() => {
+      rafPending = false;
+      const vh = scroller.clientHeight || 1;
+      const t = Math.max(0, Math.min(1, scroller.scrollTop / (vh * 0.85)));
+      root.style.setProperty("--t", t.toFixed(3));
+      root.classList.toggle("is-reading", scroller.scrollTop > 24);
+    });
+  }
+
+  /* ---- Cuenta atrás ---- */
+  function setRing(f) {
+    const v = Math.max(0, Math.min(1, f));
+    if (Math.abs(v - ringAt) < 0.01) return;
+    ringAt = v;
+    ring.style.strokeDashoffset = (GAL_RING * (1 - v)).toFixed(2);
+  }
+
+  function setPaused(v) {
+    paused = v;
+    root.classList.toggle("is-paused", paused);
+    playIcon.innerHTML = paused ? "&#9654;" : "&#10073;&#10073;";
+    playBtn.title = (paused ? "Reanudar" : "Pausar") + " el pase automático (P)";
+    playBtn.setAttribute("aria-label", (paused ? "Reanudar" : "Pausar") + " el pase automático");
+    activity();
+    setRing(0);
+  }
+
+  const tick = setInterval(() => {
+    // artImg.complete: la cuenta atrás no corre mientras el cuadro se descarga
+    if (paused || busy || document.hidden || !artImg.complete) {
+      activity();
+      setRing(0);
+      return;
+    }
+    const limit = root.classList.contains("is-reading") ? GAL_IDLE_READ : GAL_IDLE_ART;
+    const elapsed = Date.now() - lastAct;
+    setRing(elapsed / limit);
+    if (elapsed >= limit) go(1);
+  }, 120);
+
+  /* ---- Controles ---- */
+  function exit() {
+    location.hash = previousHash && previousHash.indexOf("#/galeria") !== 0 ? previousHash : "#/poetas";
+  }
+
+  function toggleFullscreen() {
+    const d = document;
+    if (d.fullscreenElement) {
+      if (d.exitFullscreen) d.exitFullscreen().catch(() => {});
+    } else if (d.documentElement.requestFullscreen) {
+      d.documentElement.requestFullscreen().catch(() => {});
+    }
+  }
+
+  $("#imm-exit").addEventListener("click", exit);
+  $("#imm-prev").addEventListener("click", () => go(-1));
+  $("#imm-next").addEventListener("click", () => go(1));
+  $("#imm-full").addEventListener("click", toggleFullscreen);
+  playBtn.addEventListener("click", () => setPaused(!paused));
+
+  on(window, "keydown", (e) => {
+    if (e.key === "Escape") {
+      e.preventDefault();
+      exit();
+      return;
+    }
+    if (e.key === "ArrowRight") {
+      e.preventDefault();
+      go(1);
+    } else if (e.key === "ArrowLeft") {
+      e.preventDefault();
+      go(-1);
+    } else if (e.key === "ArrowDown" || e.key === "ArrowUp" || e.key === " " || e.key === "PageDown" || e.key === "PageUp") {
+      // El scroll vive en un div sin foco: se mueve a mano para que el teclado
+      // también haga subir y bajar el poema.
+      e.preventDefault();
+      const page = e.key === "ArrowDown" || e.key === "ArrowUp" ? 110 : scroller.clientHeight * 0.85;
+      const up = e.key === "ArrowUp" || e.key === "PageUp" || (e.key === " " && e.shiftKey);
+      scroller.scrollBy({ top: up ? -page : page, behavior: "smooth" });
+    } else if (e.key === "p" || e.key === "P") {
+      setPaused(!paused);
+    } else if (e.key === "f" || e.key === "F") {
+      toggleFullscreen();
+    }
+    activity();
+  });
+
+  on(scroller, "scroll", onScroll, { passive: true });
+  on(root, "pointermove", activity, { passive: true });
+  on(root, "touchstart", activity, { passive: true });
+  on(root, "wheel", (e) => {
+    // Sobre los botones flotantes no hay contenedor con scroll: se reenvía
+    if (e.target.closest && e.target.closest(".imm-ui")) scroller.scrollTop += e.deltaY;
+    activity();
+  }, { passive: true });
+
+  // Deslizar en horizontal cambia de pieza (sobre todo en móvil)
+  let sx = 0;
+  let sy = 0;
+  let dragging = false;
+  on(root, "pointerdown", (e) => {
+    sx = e.clientX;
+    sy = e.clientY;
+    dragging = true;
+    activity();
+  });
+  on(root, "pointerup", (e) => {
+    if (!dragging) return;
+    dragging = false;
+    const dx = e.clientX - sx;
+    const dy = e.clientY - sy;
+    if (Math.abs(dx) > 70 && Math.abs(dx) > Math.abs(dy) * 1.6) go(dx < 0 ? 1 : -1);
+  });
+
+  /* ---- Arranque: se revela cuando la primera imagen está lista ---- */
+  root.classList.add("is-fading");
+  const reveal = () => requestAnimationFrame(() => root.classList.remove("is-fading"));
+  artImg.addEventListener("load", reveal, { once: true });
+  artImg.addEventListener("error", reveal, { once: true });
+  later(reveal, 2500);
+
+  toTop();
+  setRing(0);
+  paint(deck[0]);
+  preload(deck[1 % deck.length]);
+
+  viewCleanup = () => {
+    clearInterval(tick);
+    timers.forEach(clearTimeout);
+    off.forEach((undo) => undo());
+    delete document.body.dataset.immersive;
+  };
 }
 
 /* ---------------------- 404 ---------------------- */
