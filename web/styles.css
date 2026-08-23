@@ -111,9 +111,15 @@ img { max-width: 100%; display: block; }
 }
 .brand:hover { color: var(--text); }
 .brand-mark {
-  font-size: 26px;
-  color: var(--accent);
-  line-height: 1;
+  display: block;
+  line-height: 0;
+}
+.brand-mark img {
+  display: block;
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  border-radius: 8px;
 }
 .brand-text { display: flex; flex-direction: column; line-height: 1.2; }
 .brand-title { font-family: var(--font-serif); font-size: 18px; letter-spacing: 0.02em; }
